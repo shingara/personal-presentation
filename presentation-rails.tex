@@ -1,0 +1,192 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+\usetheme{Hannover}
+
+\title{Ruby, Ruby On Rails et le déploiement sur serveur d'application}
+\author{Cyril Mougel}
+
+\begin{document}
+
+\section{Le langage Ruby}
+
+\begin{frame}
+	\frametitle{L'historique}
+	\begin{itemize}
+		\item Créé en 1993 par Yukihiro Matsumoto dit \og{}Matz\fg{} au Japon
+		\item Langage de scripting Haut niveau où tout est objet
+        \item Applique le principe de moindre surprise ( POLS, principle of
+                least surprise)
+        \item Fonctionne sur toutes les plateformes du marchés (Linux, Windows,
+                Mac)
+	\end{itemize}
+\end{frame}
+
+\section{Le concept de Ruby On Rails}
+
+
+\begin{frame}
+    \frametitle{Le framework Ruby On Rails}
+    \begin{itemize}
+        \item Créé par David Heinemeier Hansson dit \og{}DHH\fg{}
+        \item Extrait de l'application BaseCamp de 37signals
+        \item Premiere release public en 2004 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le concept de Ruby On Rails}
+    \begin{itemize}
+        \item Ruby On Rails conçu par des développeurs pour des développeurs
+        \item Un cadre de travail minimal et complet pour un développement Web
+        \item Convention over Configuration
+        \item Don't Repeat Yourself (DRY)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Rails est MVC}
+    \begin{itemize}
+        \item Model : ActiveRecord
+        \item View : ActionView
+        \item Controller : ActionController
+    \end{itemize}
+\end{frame}
+
+\section{Composant Model de Ruby On Rails}
+
+\begin{frame}
+    \frametitle{Gestion de la Base de donnée}
+    \begin{itemize}
+        \item Systeme de gestion de migration (ActiveRecord::Migration)
+        \item Utilisation du pattern ActiveRecord
+        \item Generation de nombreuses methodes utilitaires à la volée
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Migration de Base de donnée}
+    \begin{itemize}
+        \item Gestion incrémental des fichiers de migrations
+        \item Retour avant arrière sur les migrations
+        \item Utilisation de méthode Ruby au lieu de requête SQL pur
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Exemple de Migration}
+
+    Voici donc un exemple de fichier de migration :
+
+
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{066_fix_profiles.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La classe Mapping}
+    Et pour la classe qui mappe notre classe Users qui possedent 6 champs~:
+
+    \begin{itemize}
+        \item firstname
+        \item lastname
+        \item login
+        \item password
+        \item created\_at
+        \item updated\_at
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Le code source}
+    
+    \begin{center}
+        \lstinputlisting[language=Ruby,
+        numbers=left]{user.rb}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{les méthodes static accessibles pour la classe User}
+    Et bien-sûr toutes les méthodes accessible en static~:
+    \tiny{}
+    \begin{columns}
+        \begin{column}[l]{6cm}
+            \begin{itemize}
+                \item User.find :all
+                \item User.find\_by\_firstname 'Cyril'
+                \item User.find\_by\_lastname 'Mougel'
+                \item User.find\_by\_firstname\_and\_lastname 'Cyril', 'Mougel'
+            \end{itemize}
+        \end{column}
+
+        \begin{column}[r]{6cm}
+            \begin{itemize}
+                \item User.count :all
+                \item User.count\_by\_firstname 'Cyril'
+                \item User.count\_by\_lastname 'Mougel'
+                \item User.count\_by\_firstname\_and\_lastname 'Cyril', 'Mougel'
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \normalsize{}
+    etc...
+\end{frame}
+
+\begin{frame}
+    \frametitle{les méthodes d'instance pour les objets User}
+    Et bien-sûr toutes les méthodes d'instance accessible après instanciation
+    de l'objet User~:
+    \scriptsize{}
+    \begin{columns}
+        \begin{column}[l]{3cm}
+            \begin{itemize}
+                \item user.firstname
+                \item user.firstname =
+                \item user.lastname
+                \item user.lastname =
+            \end{itemize}
+        \end{column}
+
+        \begin{column}[r]{6cm}
+            \begin{itemize}
+                \item user.save
+                \item user.destroy
+                \item user.update\_attributes :firstname => 'Cyril, 
+                                                :lastname => 'Mougel'
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \normalsize{}
+    etc...
+\end{frame}
+
+
+\section{Composant Controller de Ruby On Rails}
+
+\begin{frame}
+\end{frame}
+
+\end{document}
