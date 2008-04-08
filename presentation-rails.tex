@@ -55,12 +55,26 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Pourquoi Rails en Ruby ?}
+    \begin{itemize}
+        \item Multi-plateforme
+        \item Forte facilité d'introspection et réflexion.
+            \begin{itemize}
+                \item User.findi\_by\_firstname\_and\_lastname 'David', 'Hanson'
+                \item has\_many :galleries
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{Le concept de Ruby On Rails}
     \begin{itemize}
         \item Ruby On Rails conçu par des développeurs pour des développeurs
         \item Un cadre de travail minimal et complet pour un développement Web
         \item Convention over Configuration
         \item Don't Repeat Yourself (DRY)
+        \item Say what you do, Do what you say
+        \item Un seul et unique language pour tout faire
     \end{itemize}
 \end{frame}
 
@@ -187,6 +201,42 @@
 \section{Composant Controller de Ruby On Rails}
 
 \begin{frame}
+    \frametitle{1 methode, 1 URL}
+    \begin{itemize}
+        \item Url implicite à partir du nom de controlleur et du nom de la
+        methode
+        \item Utilisation de routes nommée
+        \item Définission implicite du fichier de Vue
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{RESTFULL}
+
+    \begin{itemize}
+        \item REST (Representational State Transfer)
+        \item Basé sur les 4 Verbes HTTP~:
+            \begin{itemize}
+                \item POST (create)
+                \item GET (show)
+                \item PUT (update)
+                \item DELETE (delete)
+            \end{itemize}
+        \item Utilisation des verbes simples avec URL correspondant.
+        \item Facilité de création d'une API
+    \end{itemize}
+\end{frame}
+
+\section{Composant de vue de Rails}
+
+\begin{frame}
+    \frametitle{Les helpers}
+
+    \begin{itemize}
+        \item 1 helper par controller par défaut
+        \item réutilisation des manipulations de vues
+        \item de nombreuses méthodes existantes dans l'API
+    \end{itemize}
 \end{frame}
 
 \end{document}
