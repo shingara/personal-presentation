@@ -1,0 +1,45 @@
+digraph g {
+    graph [
+        rankdir = "LR"
+    ];
+    "Articles" [
+        label =<
+<table>
+    <tr>
+        <td bgcolor="blue">Articles</td>
+    </tr>
+    <tr>
+        <td port="id">id</td>
+    </tr>
+    <tr>
+        <td>titre</td>
+    </tr>
+    <tr>
+        <td>text</td>
+    </tr>
+</table>
+        >
+        shape = "plaintext"
+        ];
+    
+    "Commentaires" [
+        label =<
+<table>
+    <tr>
+        <td bgcolor="blue">Commentaires</td>
+    </tr>
+    <tr>
+        <td>id</td>
+    </tr>
+    <tr>
+        <td port="a">article_id</td>
+    </tr>
+    <tr>
+        <td>note</td>
+    </tr>
+</table>
+        >
+        shape = "plaintext"
+        ];
+    "Commentaires":"a" -> "Articles":"id"
+}
