@@ -265,4 +265,41 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{ActionView}
+    \begin{block}{app/views/project/list.html.erb}
+        \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny,showspaces=false,showstringspaces=false]{list.html.erb}
+    \end{block}
+    \begin{block}{app/views/project/show.html.erb}
+        \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny,showspaces=false,showstringspaces=false]{show.html.erb}
+    \end{block}
+    \begin{block}{app/views/task/\_task.html.erb}
+        \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny,showspaces=false,showstringspaces=false]{_task.html.erb}
+    \end{block}
+\end{frame}
+
+
+\section{Les tests}
+
+\begin{frame}
+    \frametitle{Les tests unitaires}
+    \begin{itemize}
+        \item Dans le dossier /test/units
+        \item Test sur les classes models
+        \item Facilité de créer un jeux de test
+        \item Base de donnée indépendante
+        \item Réinjection automatique des données à chaques tests
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les test fonctionnels}
+    \begin{itemize}
+        \item Dans le dossier /test/functionals
+        \item Test sur les controlleurs
+        \item Même système d'injection des jeux de données
+        \item assertion spécifique avec vérification du DOM
+    \end{itemize}
+\end{frame}
+
 \end{document}

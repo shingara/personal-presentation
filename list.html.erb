@@ -1,0 +1,5 @@
+<% @project.each do |project| do %>
+  <h1><%= project.title %></h1>
+  <p><%= truncate(project.description, 80) %></p>
+  <p><%= link_to "suite...", :action => "show" , :id => project.id %></p>
+<% end %>
