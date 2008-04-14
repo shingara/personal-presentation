@@ -3,8 +3,34 @@ digraph g {
         rankdir = "LR"
     ];
     "User" [
-        label =
-        "user|id|firstname|lastename|login|password|created_at|updated_at"
-        shape = "record"
+        label =<
+<table>
+    <tr>
+        <td bgcolor="blue">Users</td>
+    </tr>
+    <tr>
+        <td>id</td>
+    </tr>
+    <tr>
+        <td>firstname</td>
+    </tr>
+    <tr>
+        <td>lastname</td>
+    </tr>
+    <tr>
+        <td>login</td>
+    </tr>
+    <tr>
+        <td>password</td>
+    </tr>
+    <tr>
+        <td>created_ad</td>
+    </tr>
+    <tr>
+        <td>updated_ad</td>
+    </tr>
+</table>
+        >
+        shape = "plaintext"
         ];
 }

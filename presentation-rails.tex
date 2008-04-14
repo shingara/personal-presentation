@@ -22,6 +22,13 @@
 %\usepackage[darktab]{beamerthemesidebar}
 %\leftsidebar
 \usetheme{Hannover}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+
 
 \title{Ruby, Ruby On Rails et le déploiement sur serveur d'application}
 \author{Cyril Mougel}
@@ -141,24 +148,21 @@
 \begin{frame}
     \frametitle{La classe Mapping}
     Et pour la classe qui mappe notre classe Users qui possedent 6 champs~:
-
-    \begin{itemize}
-        \item firstname
-        \item lastname
-        \item login
-        \item password
-        \item created\_at
-        \item updated\_at
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Le code source}
-    
-    \begin{center}
-        \lstinputlisting[language=Ruby,
-        numbers=left]{user.rb}
-    \end{center}
+   
+    \begin{columns}
+        \begin{column}[l]{3cm}
+            \includegraphics[width=20mm]{user.png}
+        \end{column}
+        
+        \begin{column}[r]{10cm}
+            \begin{block}{Code de la classe de Mapping}
+              \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{user.rb}        
+            \end{block}
+            \begin{block}{Exemple d'utilisation de la classe de mapping}
+              \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{user_use.rb}        
+            \end{block}
+        \end{column}
+    \end{columns}
 
 \end{frame}
 
@@ -190,31 +194,25 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{les méthodes d'instance pour les objets User}
-    Et bien-sûr toutes les méthodes d'instance accessible après instanciation
-    de l'objet User~:
+    \frametitle{le système de validation du modèle}
+    Multiple système de validation pour empecher l'enregistrement en base de
+    donnée éronné
     \scriptsize{}
     \begin{columns}
-        \begin{column}[l]{3cm}
-            \begin{itemize}
-                \item user.firstname
-                \item user.firstname =
-                \item user.lastname
-                \item user.lastname =
-            \end{itemize}
+        \begin{column}[l]{5cm}
+            \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{user2.rb}
         \end{column}
 
-        \begin{column}[r]{6cm}
-            \begin{itemize}
-                \item user.save
-                \item user.destroy
-                \item user.update\_attributes :firstname => 'Cyril, 
-                                                :lastname => 'Mougel'
-            \end{itemize}
+        \begin{column}[r]{5cm}
+            %TODO: mettre une image en adéquation avec le code
+            \includegraphics[width=60mm]{error_screenshot.png}
         \end{column}
     \end{columns}
-    \normalsize{}
-    etc...
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les associations}
+
 \end{frame}
 
 
