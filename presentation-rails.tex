@@ -151,15 +151,15 @@
    
     \begin{columns}
         \begin{column}[l]{3cm}
-            \includegraphics[width=20mm]{user.png}
+            \includegraphics[width=20mm]{project.png}
         \end{column}
         
         \begin{column}[r]{10cm}
             \begin{block}{Code de la classe de Mapping}
-              \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{user.rb}        
+              \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{project.rb}        
             \end{block}
             \begin{block}{Exemple d'utilisation de la classe de mapping}
-              \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{user_use.rb}        
+              \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{project_use.rb}        
             \end{block}
         \end{column}
     \end{columns}
@@ -167,25 +167,25 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{les méthodes static accessibles pour la classe User}
+    \frametitle{les méthodes static accessibles pour la classe Project}
     Et bien-sûr toutes les méthodes accessible en static~:
     \tiny{}
     \begin{columns}
-        \begin{column}[l]{6cm}
+        \begin{column}[l]{5cm}
             \begin{itemize}
-                \item User.find :all
-                \item User.find\_by\_firstname 'Cyril'
-                \item User.find\_by\_lastname 'Mougel'
-                \item User.find\_by\_firstname\_and\_lastname 'Cyril', 'Mougel'
+                \item Project.find :all
+                \item Project.find\_by\_title 'EDF Entreprise'
+                \item Project.find\_by\_description 'un site'
+                \item Project.find\_by\_title\_and\_description 'EDF', 'site'
             \end{itemize}
         \end{column}
 
         \begin{column}[r]{6cm}
             \begin{itemize}
-                \item User.count :all
-                \item User.count\_by\_firstname 'Cyril'
-                \item User.count\_by\_lastname 'Mougel'
-                \item User.count\_by\_firstname\_and\_lastname 'Cyril', 'Mougel'
+                \item Project.count :all
+                \item Project.count\_by\_title 'EDF Entreprise'
+                \item Project.count\_by\_description 'un site'
+                \item Project.count\_by\_title\_and\_description 'EDF', 'site'
             \end{itemize}
         \end{column}
     \end{columns}
@@ -200,7 +200,7 @@
     \scriptsize{}
     \begin{columns}
         \begin{column}[l]{5cm}
-            \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{user2.rb}
+            \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{project2.rb}
         \end{column}
 
         \begin{column}[r]{5cm}
@@ -213,8 +213,8 @@
 \begin{frame}
     \frametitle{Les associations}
     \begin{center}
-        \includegraphics[width=40mm]{article_commentaire.png}
-        \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{article.rb}
+        \includegraphics[width=40mm]{project_task.png}
+        \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{project3.rb}
     \end{center}
 \end{frame}
 

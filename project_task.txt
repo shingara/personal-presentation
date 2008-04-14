@@ -1,0 +1,45 @@
+digraph g {
+    graph [
+        rankdir = "LR"
+    ];
+    "Project" [
+        label =<
+<table>
+    <tr>
+        <td bgcolor="yellow">Projects</td>
+    </tr>
+    <tr>
+        <td port="id">id</td>
+    </tr>
+    <tr>
+        <td>titre</td>
+    </tr>
+    <tr>
+        <td>description</td>
+    </tr>
+</table>
+        >
+        shape = "plaintext"
+        ];
+    
+    "Task" [
+        label =<
+<table>
+    <tr>
+        <td bgcolor="yellow">Tasks</td>
+    </tr>
+    <tr>
+        <td>id</td>
+    </tr>
+    <tr>
+        <td port="p">project_id</td>
+    </tr>
+    <tr>
+        <td>description</td>
+    </tr>
+</table>
+        >
+        shape = "plaintext"
+        ];
+    "Task":"p" -> "Project":"id"
+}

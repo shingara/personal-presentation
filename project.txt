@@ -1,0 +1,30 @@
+digraph g {
+    graph [
+        rankdir = "LR"
+    ];
+    "Project" [
+        label =<
+<table>
+    <tr>
+        <td bgcolor="yellow">Projects</td>
+    </tr>
+    <tr>
+        <td>id</td>
+    </tr>
+    <tr>
+        <td>title</td>
+    </tr>
+    <tr>
+        <td>description</td>
+    </tr>
+    <tr>
+        <td>created_ad</td>
+    </tr>
+    <tr>
+        <td>updated_ad</td>
+    </tr>
+</table>
+        >
+        shape = "plaintext"
+        ];
+}
