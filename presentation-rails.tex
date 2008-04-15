@@ -21,19 +21,39 @@
 
 %\usepackage[darktab]{beamerthemesidebar}
 %\leftsidebar
-\usetheme{Hannover}
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
 %\usetheme{Oxygen}
 \usepackage{thumbpdf}
 \usepackage{wasysym}
 \usepackage{ucs}
 \usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
 
 
 \title{Ruby, Ruby On Rails et le déploiement sur serveur d'application}
 \author{Cyril Mougel}
 
+\logo{\includegraphics[width=10mm]{rails.png}}
+
 \begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
 
 \section{Le langage Ruby}
 
@@ -67,7 +87,7 @@
         \item Multi-plateforme
         \item Forte facilité d'introspection et réflexion.
             \begin{itemize}
-                \item User.findi\_by\_firstname\_and\_lastname 'David', 'Hanson'
+                \item User.find\_by\_firstname\_and\_lastname 'David', 'Hanson'
                 \item has\_many :galleries
             \end{itemize}
     \end{itemize}
@@ -96,10 +116,8 @@
 
 \begin{frame}
     \frametitle{Chaque chose à sa place}
-    \begin{itemize}
-        \item Chaque dossiers correspond à quelque chose et a son utilité
+    Chaque dossiers correspond à quelque chose et à son utilité
             propre
-    \end{itemize}
     \begin{columns}
         \begin{column}[l]{4cm}
             \begin{figure}
@@ -121,7 +139,7 @@
     \begin{itemize}
         \item Systeme de gestion de migration (ActiveRecord::Migration)
         \item Utilisation du pattern ActiveRecord
-        \item Generation de nombreuses methodes utilitaires à la volée
+        \item Génération de nombreuses methodes utilitaires à la volée
     \end{itemize}
 \end{frame}
 
@@ -195,8 +213,8 @@
 
 \begin{frame}
     \frametitle{le système de validation du modèle}
-    Multiple système de validation pour empecher l'enregistrement en base de
-    donnée éronné
+    Multiples systèmes de validation pour empêcher l'enregistrement en base de
+    donnée d'information éronnée
     \scriptsize{}
     \begin{columns}
         \begin{column}[l]{5cm}
@@ -204,7 +222,6 @@
         \end{column}
 
         \begin{column}[r]{5cm}
-            %TODO: mettre une image en adéquation avec le code
             \includegraphics[width=60mm]{error_screenshot.png}
         \end{column}
     \end{columns}
@@ -322,6 +339,30 @@
         \item Profiler
         \item Couverture de code
     \end{itemize}
+\end{frame}
+
+\section{Java, Jruby et Ruby On Rails}
+
+\begin{frame}
+    \frametitle{JRuby implémentation Java de Ruby}
+    \begin{itemize}
+        \item Jruby 1.0 sortie en Juin 2007, 1.1 en Avril 2008
+        \item Compatible entièrement avec Ruby 1.8.6
+        \item Intégration avec toutes librairies Java existante
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Jruby On Rails}
+    \begin{itemize}
+        \item Depuis JRuby 1.0, possibilité de faire tourner Ruby On Rails
+        \item Possibilité de générer un WAR avec le plugin Goldspike
+        \item War généré utilisable dans un serveur d'application
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    demo
 \end{frame}
 
 \end{document}
