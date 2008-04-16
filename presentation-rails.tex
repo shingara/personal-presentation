@@ -44,7 +44,7 @@
 }
 
 
-\title{Ruby, Ruby On Rails et le déploiement sur serveur d'application}
+\title{Ruby, Ruby on Rails et le déploiement sur serveur d'application}
 \author{Cyril Mougel}
 
 \logo{\includegraphics[width=10mm]{rails.png}}
@@ -60,32 +60,33 @@
 \begin{frame}
 	\frametitle{L'historique}
 	\begin{itemize}
-		\item Créé en 1993 par Yukihiro Matsumoto dit \og{}Matz\fg{} au Japon
-		\item Langage de scripting Haut niveau où tout est objet
-        \item Applique le principe de moindre surprise ( POLS, principle of
-                least surprise)
-        \item Fonctionne sur toutes les plateformes du marchés (Linux, Windows,
+		\item Créé en 1993 par Yukihiro Matsumoto dit \og{}Matz\fg{}
+		\item Langage de scripting de haut niveau
+		\item Plus qu'orienté objet: tout est objet
+        \item Applique le principe de moindre surprise (POLS, \emph{principle of
+                least surprise})
+        \item Fonctionne sur les plateformes les plus populaires du marchés (Linux, Windows,
                 Mac)
 	\end{itemize}
 \end{frame}
 
-\section{Le concept de Ruby On Rails}
+\section{Les concepts de Ruby on Rails}
 
 
 \begin{frame}
-    \frametitle{Le framework Ruby On Rails}
+    \frametitle{Le framework Ruby on Rails}
     \begin{itemize}
         \item Créé par David Heinemeier Hansson dit \og{}DHH\fg{}
         \item Extrait de l'application BaseCamp de 37signals
-        \item Premiere release public en 2004 
+        \item Première \emph{public release} en 2004 
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Pourquoi Rails en Ruby ?}
     \begin{itemize}
-        \item Multi-plateforme
-        \item Forte facilité d'introspection et réflexion.
+        \item Multi-plateformes
+        \item Fortes facilités d'introspection et réflexion.
             \begin{itemize}
                 \item User.find\_by\_firstname\_and\_lastname 'David', 'Hanson'
                 \item has\_many :galleries
@@ -94,14 +95,14 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Le concept de Ruby On Rails}
+    \frametitle{Le concept de Ruby on Rails}
     \begin{itemize}
-        \item Ruby On Rails conçu par des développeurs pour des développeurs
-        \item Un cadre de travail minimal et complet pour un développement Web
-        \item Convention over Configuration
-        \item Don't Repeat Yourself (DRY)
-        \item Say what you do, Do what you say
-        \item Un seul et unique language pour tout faire
+        \item Ruby on Rails est conçu par des développeurs, pour des développeurs
+        \item Un cadre de travail minimal et complet pour le développement Web
+        \item \emph{Convention over Configuration}
+        \item \emph{Don't Repeat Yourself} (DRY)
+        \item \emph{Say what you do, Do what you say}
+        \item Un seul et unique langage pour tout faire
     \end{itemize}
 \end{frame}
 
@@ -116,7 +117,7 @@
 
 \begin{frame}
     \frametitle{Chaque chose à sa place}
-    Chaque dossiers correspond à quelque chose et à son utilité
+    Chaque dossier correspond à quelque chose et a son utilité
             propre
     \begin{columns}
         \begin{column}[l]{4cm}
@@ -132,29 +133,29 @@
     \end{columns}
 \end{frame}
 
-\section{Composant Model de Ruby On Rails}
+\section{Composant Model de Ruby on Rails}
 
 \begin{frame}
-    \frametitle{Gestion de la Base de donnée}
+    \frametitle{Gestion de la Base de données}
     \begin{itemize}
-        \item Systeme de gestion de migration (ActiveRecord::Migration)
+        \item Système de gestion de migration (ActiveRecord::Migration)
         \item Utilisation du pattern ActiveRecord
-        \item Génération de nombreuses methodes utilitaires à la volée
+        \item Génération de nombreuses méthodes utilitaires à la volée
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Migration de Base de donnée}
     \begin{itemize}
-        \item Gestion incrémental des fichiers de migrations
-        \item Retour avant arrière sur les migrations
-        \item Utilisation de méthode Ruby au lieu de requête SQL pur
+        \item Gestion incrémentale des fichiers de migrations
+        \item Retour avant/arrière au sein des migrations
+        \item Utilisation de méthodes Ruby au lieu de requêtes SQL pur
     \end{itemize}
 \end{frame}
 \begin{frame}
     \frametitle{Exemple de Migration}
 
-    Voici donc un exemple de fichier de migration :
+    Un exemple de fichier de migration :
 
 
     \begin{center}
@@ -165,7 +166,7 @@
 
 \begin{frame}
     \frametitle{La classe Mapping}
-    Et pour la classe qui mappe notre classe Users qui possedent 6 champs~:
+    Et pour la classe qui mappe notre classe Users qui possèdent 6 champs~:
    
     \begin{columns}
         \begin{column}[l]{3cm}
@@ -185,8 +186,8 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{les méthodes static accessibles pour la classe Project}
-    Et bien-sûr toutes les méthodes accessible en static~:
+    \frametitle{les méthodes \emph{static} accessibles pour la classe Project}
+    Et bien-sûr toutes les méthodes accessibles en \emph{static}~:
     \tiny{}
     \begin{columns}
         \begin{column}[l]{5cm}
@@ -208,13 +209,13 @@
         \end{column}
     \end{columns}
     \normalsize{}
-    etc...
+    etc\ldots
 \end{frame}
 
 \begin{frame}
     \frametitle{le système de validation du modèle}
     Multiples systèmes de validation pour empêcher l'enregistrement en base de
-    donnée d'information éronnée
+    données d'informations erronées
     \scriptsize{}
     \begin{columns}
         \begin{column}[l]{5cm}
@@ -236,15 +237,15 @@
 \end{frame}
 
 
-\section{Composant Controller de Ruby On Rails}
+\section{Composant Controller de Ruby on Rails}
 
 \begin{frame}
-    \frametitle{1 methode, 1 URL}
+    \frametitle{1 méthode, 1 URL}
     \begin{itemize}
-        \item Url implicite à partir du nom de controlleur et du nom de la
-        methode
-        \item Utilisation de routes nommée
-        \item Définission implicite du fichier de Vue
+        \item Url implicite à partir du nom de controller et du nom de la
+        méthode
+        \item Utilisation de routes nommées
+        \item Définition implicite du fichier de Vue
     \end{itemize}
 \end{frame}
 
@@ -253,14 +254,14 @@
 
     \begin{itemize}
         \item REST (Representational State Transfer)
-        \item Basé sur les 4 Verbes HTTP~:
+        \item Basé sur les 4 verbes HTTP~:
             \begin{itemize}
                 \item POST (create)
                 \item GET (show)
                 \item PUT (update)
                 \item DELETE (delete)
             \end{itemize}
-        \item Utilisation des verbes simples avec URL correspondant.
+        \item Utilisation des verbes simples avec URL correspondant
         \item Facilité de création d'une API
     \end{itemize}
 \end{frame}
@@ -303,26 +304,26 @@
     \begin{itemize}
         \item Dans le dossier /test/units
         \item Test sur les classes models
-        \item Facilité de créer un jeux de test
-        \item Base de donnée indépendante
-        \item Réinjection automatique des données à chaques tests
+        \item Facilité de créer des jeux de tests
+        \item Base de données indépendante
+        \item Réinjection automatique des données à chaque test
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les test fonctionnels}
+    \frametitle{Les tests fonctionnels}
     \begin{itemize}
         \item Dans le dossier /test/functionals
-        \item Test sur les controlleurs
+        \item Test sur les controllers
         \item Même système d'injection des jeux de données
-        \item assertion spécifique avec vérification du DOM
+        \item Assertion spécifique avec vérification du DOM
     \end{itemize}
 \end{frame}
 
 \section{Outils de développement}
 
 \begin{frame}
-    \frametitle{Les environnement de développement}
+    \frametitle{Les environnements de développement}
     \begin{itemize}
         \item Netbeans depuis la version 6.0 
         \item Aptana, plugin d'eclipse
@@ -346,16 +347,16 @@
 \begin{frame}
     \frametitle{JRuby implémentation Java de Ruby}
     \begin{itemize}
-        \item Jruby 1.0 sortie en Juin 2007, 1.1 en Avril 2008
-        \item Compatible entièrement avec Ruby 1.8.6
-        \item Intégration avec toutes librairies Java existante
+        \item JRuby 1.0 sortie en Juin 2007, 1.1 en Avril 2008
+        \item Entièrement compatible avec Ruby 1.8.6
+        \item Intégration avec toute bibliothèque Java existante
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Jruby On Rails}
+    \frametitle{JRuby on Rails}
     \begin{itemize}
-        \item Depuis JRuby 1.0, possibilité de faire tourner Ruby On Rails
+        \item Depuis JRuby 1.0.2, possibilité de faire tourner Ruby On Rails
         \item Possibilité de générer un WAR avec le plugin Goldspike
         \item War généré utilisable dans un serveur d'application
     \end{itemize}
