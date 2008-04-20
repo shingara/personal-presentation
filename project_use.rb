@@ -5,4 +5,4 @@ project1.save
 project2 = Project.create(:title => 'GARI')
 project2.destroy
 
-all_Project = Project.find :all
+all_Projects = Project.find :all

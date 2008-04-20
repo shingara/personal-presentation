@@ -44,7 +44,7 @@
 }
 
 
-\title{Ruby, Ruby on Rails et le déploiement sur serveur d'application}
+\title{Ruby, Ruby on Rails}
 \author{Cyril Mougel}
 
 \logo{\includegraphics[width=10mm]{rails.png}}
@@ -138,7 +138,7 @@
 \begin{frame}
     \frametitle{Gestion de la Base de données}
     \begin{itemize}
-        \item Système de gestion de migration (ActiveRecord::Migration)
+        \item Système de gestion de migration(ActiveRecord::Migration)
         \item Utilisation du pattern ActiveRecord
         \item Génération de nombreuses méthodes utilitaires à la volée
     \end{itemize}
@@ -149,7 +149,7 @@
     \begin{itemize}
         \item Gestion incrémentale des fichiers de migrations
         \item Retour avant/arrière au sein des migrations
-        \item Utilisation de méthodes Ruby au lieu de requêtes SQL pur
+        \item Utilisation de méthodes Ruby au lieu des requêtes SQL pur
     \end{itemize}
 \end{frame}
 \begin{frame}
@@ -165,7 +165,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{La classe Mapping}
+    \frametitle{Utilisation d'ActiveRecord}
     Exemple de fichier qui mappe la table Projects qui possèdent 6 champs~:
    
     \begin{columns}
@@ -174,7 +174,7 @@
         \end{column}
         
         \begin{column}[r]{10cm}
-            \begin{block}{Code de la classe de Mapping}
+            \begin{block}{Code de la classe de mapping}
               \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{project.rb}        
             \end{block}
             \begin{block}{Exemple d'utilisation de la classe de mapping}
@@ -186,8 +186,8 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{les méthodes \emph{static} accessibles pour la classe Project}
-    Et bien-sûr toutes les méthodes accessibles en \emph{static}~:
+    \frametitle{les méthodes de classe (correspondant au static de Java) accessibles pour la classe Project}
+    Et bien-sûr toutes les méthodes accessibles en directement par la Classe~:
     \tiny{}
     \begin{columns}
         \begin{column}[l]{5cm}
@@ -214,7 +214,8 @@
 
 \begin{frame}
     \frametitle{le système de validation du modèle}
-    Multiples systèmes de validation pour empêcher l'enregistrement en base de
+    Multiples systèmes de gestion directement dans le cycle de Vie de l'objet
+    mod\'ele pour empêcher l'enregistrement en base de
     données d'informations erronées
     \scriptsize{}
     \begin{columns}
@@ -242,7 +243,7 @@
 \begin{frame}
     \frametitle{1 méthode, 1 URL}
     \begin{itemize}
-        \item Url implicite à partir du nom de controller et du nom de la
+        \item Url implicite à partir du nom de contr\^oleur et du nom de la
         méthode
         \item Utilisation de routes nommées
         \item Définition implicite du fichier de Vue
@@ -261,7 +262,7 @@
                 \item PUT (update)
                 \item DELETE (delete)
             \end{itemize}
-        \item Utilisation des verbes simples avec URL correspondant
+        \item Utilisation des verbes simples avec URL correspondante
         \item Facilité de création d'une API
     \end{itemize}
 \end{frame}
@@ -271,12 +272,13 @@
     \lstinputlisting[language=Ruby,numbers=left,basicstyle=\scriptsize]{project_controller.rb}
 \end{frame}
 
-\section{Composant de Vue de Ruby On Rails}
+\section{Composant View de Ruby on Rails}
 
 \begin{frame}
     \frametitle{Les helpers}
 
     \begin{itemize}
+        \item les taglibs de Ruby on Rails
         \item 1 helper par controller par défaut
         \item réutilisation des manipulations de vues
         \item de nombreuses méthodes existantes dans l'API
@@ -303,10 +305,11 @@
     \frametitle{Les tests unitaires}
     \begin{itemize}
         \item Dans le dossier /test/units
-        \item Test sur les classes models
+        \item Test sur les mod\'eles
         \item Facilité de créer des jeux de tests
         \item Base de données indépendante
-        \item Réinjection automatique des données à chaque test
+        \item Chaque test dans une transaction et ROLLBACK \`a la fin de chaque
+        test.
     \end{itemize}
 \end{frame}
 
@@ -314,9 +317,9 @@
     \frametitle{Les tests fonctionnels}
     \begin{itemize}
         \item Dans le dossier /test/functionals
-        \item Test sur les controllers
+        \item Test sur les contr\^oleurs
         \item Même système d'injection des jeux de données
-        \item Assertion spécifique avec vérification du DOM
+        \item Assertions spécifiques avec vérification du DOM
     \end{itemize}
 \end{frame}
 
@@ -326,8 +329,9 @@
     \frametitle{Les environnements de développement}
     \begin{itemize}
         \item Netbeans depuis la version 6.0 
-        \item Aptana, plugin d'eclipse
+        \item RadRails, plugin d'eclipse
         \item Ruby In Steel, add-on de Microsoft Visual Studio
+        \item TextMate
         \item Vim/Emacs
     \end{itemize}
 \end{frame}
@@ -342,7 +346,7 @@
     \end{itemize}
 \end{frame}
 
-\section{Java, Jruby et Ruby On Rails}
+\section{Java, JRuby et Ruby On Rails}
 
 \begin{frame}
     \frametitle{JRuby implémentation Java de Ruby}
