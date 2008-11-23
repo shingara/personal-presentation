@@ -1,0 +1,84 @@
+------------------------------------------------------------------------
+r1838 | neuro | 2008-10-16 14:56:36 +0200 (Thu, 16 Oct 2008) | 1 line
+
+Finishing migration, next is merge
+------------------------------------------------------------------------
+r1831 | shingara | 2008-09-24 00:17:29 +0200 (Wed, 24 Sep 2008) | 1 line
+
+fix error when you want create database by rails rake
+------------------------------------------------------------------------
+r1830 | shingara | 2008-09-22 16:08:25 +0200 (Mon, 22 Sep 2008) | 1 line
+
+add rspec task because doesn't exist in master rspec-rails. Generate by rspec generator
+------------------------------------------------------------------------
+r1829 | shingara | 2008-09-16 23:13:59 +0200 (Tue, 16 Sep 2008) | 1 line
+
+add mock forget who define resources unlink true
+------------------------------------------------------------------------
+r1828 | shingara | 2008-09-16 22:52:38 +0200 (Tue, 16 Sep 2008) | 1 line
+
+change request.relative_url_root to ActionController::Base.relative_url_root, because moved in Rails Edge. TODO: report bug to FckEditor plugin
+------------------------------------------------------------------------
+r1827 | shingara | 2008-09-16 22:22:11 +0200 (Tue, 16 Sep 2008) | 1 line
+
+add include when order by table not include
+------------------------------------------------------------------------
+r1826 | shingara | 2008-09-16 18:05:25 +0200 (Tue, 16 Sep 2008) | 1 line
+
+change render_partial to render :partial => because deleted
+------------------------------------------------------------------------
+r1825 | shingara | 2008-09-16 17:50:43 +0200 (Tue, 16 Sep 2008) | 1 line
+
+render_partial becomes render :partial, delete several follow_redirect in functional test, first_render becomes _first_render
+------------------------------------------------------------------------
+r1824 | shingara | 2008-09-16 17:15:09 +0200 (Tue, 16 Sep 2008) | 1 line
+
+delete follow_redirect in functionnal spec because deleted from rails
+------------------------------------------------------------------------
+r1823 | shingara | 2008-09-16 16:49:16 +0200 (Tue, 16 Sep 2008) | 1 line
+
+request.relative_url_root is deleted, now use ActionController::Base.relative_url_root
+------------------------------------------------------------------------
+r1822 | shingara | 2008-09-16 16:24:59 +0200 (Tue, 16 Sep 2008) | 1 line
+
+fix generate permalink_url with relative_url_root of Blog model. In edge Rails rewrite_url use ActionController::Base.relative_url_root instead of @request.relative_url_root using before Rails < 2.2
+------------------------------------------------------------------------
+r1821 | shingara | 2008-09-16 15:31:39 +0200 (Tue, 16 Sep 2008) | 1 line
+
+add extend in TextHelper needed by sanitize
+------------------------------------------------------------------------
+r1820 | shingara | 2008-09-15 23:35:00 +0200 (Mon, 15 Sep 2008) | 1 line
+
+revert part of #1818 because breaks excerpt method in model. Add model who extend new helper
+------------------------------------------------------------------------
+r1819 | shingara | 2008-09-15 22:44:02 +0200 (Mon, 15 Sep 2008) | 1 line
+
+delete include Observable because all ActiveRecord::Base include Observable
+------------------------------------------------------------------------
+r1818 | shingara | 2008-09-15 18:12:53 +0200 (Mon, 15 Sep 2008) | 2 lines
+
+Update new include of helper method 
+
+------------------------------------------------------------------------
+r1817 | shingara | 2008-09-15 17:05:01 +0200 (Mon, 15 Sep 2008) | 3 lines
+
+fix spec in metafragment because caching fragment is more general since rails
+2.0, change key
+
+------------------------------------------------------------------------
+r1816 | shingara | 2008-09-15 14:10:47 +0200 (Mon, 15 Sep 2008) | 4 lines
+
+ * Inflector move in initializers
+ * fragment_cache_store replace by cache_store configuration 
+ * allow_concurrency deleted
+
+------------------------------------------------------------------------
+r1815 | shingara | 2008-09-15 14:08:02 +0200 (Mon, 15 Sep 2008) | 2 lines
+
+rake rails:update launch
+
+------------------------------------------------------------------------
+r1814 | neuro | 2008-09-14 22:34:23 +0200 (Sun, 14 Sep 2008) | 1 line
+
+Importing experimental Rails 2.2 branch
+------------------------------------------------------------------------
