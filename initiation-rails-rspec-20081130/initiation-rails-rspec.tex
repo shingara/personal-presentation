@@ -1,0 +1,133 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\title{Ruby On Rails par Rspec}
+\author{Cyril Mougel}
+
+\logo{\includegraphics[width=10mm]{rails.png}}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Rspec, BDD ?}
+
+\begin{frame}
+	\frametitle{Behaviour Driven Development}
+	\begin{itemize}
+		\item M\'ethode Agile
+		\item Extreme programming
+		\item TDD (Test Driven Development)
+        \item l'empire du 'should'
+	\end{itemize}
+\end{frame}
+
+\section{Rails est agile avant tout}
+
+\begin{frame}
+    \frametitle{Test::Unit de base dans Rails}
+    \begin{itemize}
+        \item Dossier test cr\'e\'e \`a chaque cr\'eation de projet Rails
+        \item Stats de nombre de LOC et LOC de test (TODO: mettre image ici)
+        \item Possibilite de tester chaque couche de Rails
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mais pourquoi Rspec alors ?}
+    \begin{itemize}
+        \item Rspec == BDD Framework
+        \item Documentation g\'en\'er\'ee plus claire que les Test::Unit
+        \item R\'eutilisation plus simple du comportement
+        \item Ajout des Stories (Cucumber)
+    \end{itemize}
+\end{frame}
+
+\section{La couche mod\`ele de Rails}
+
+\begin{frame}
+    \frametitle{Des classes de Mapping a la Base de donn\'ee}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{user_products.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit cr\'eer les accesseurs sur les colonnes}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{user_accessor.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit valider le model}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_valid_model.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit chercher des donn\'ees}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_find.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit avoir des associations}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_association.rb}
+    \end{center}
+\end{frame}
+
+\end{document}
