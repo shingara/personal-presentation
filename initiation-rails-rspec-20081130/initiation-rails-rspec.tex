@@ -88,6 +88,15 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Et ca s'installe comment ?}
+    \begin{itemize}
+        \item gem install rspec \&\& gem install rspec-rails
+        \item gem install rspec \&\& ./script/install git://github.com/dchelimsky/rspec-rails.git
+        \item gem install rspec \&\& git-submodule add vendor/plugins/rspec-rails git://github.com/dchelimsky/rspec-rails.git
+    \end{itemize}
+\end{frame}
+
 \section{La couche mod\`ele de Rails}
 
 \begin{frame}
@@ -129,5 +138,96 @@
         numbers=left]{user_association.rb}
     \end{center}
 \end{frame}
+
+\section{La couche controller de Rails}
+
+\begin{frame}
+    \frametitle{Un controlleur Rails}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_show.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit permettre de voir la liste des utilisateurs}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_index_spec.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit permettre de voir un utilisateur particulier}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_show_spec.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit cr\'eer un utilisateur}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_create_spec.rb}
+    \end{center}
+\end{frame}
+
+\section {Les routes Rails}
+
+\begin{frame}
+    \frametitle{Une simple ligne de route}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_route.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit cr\'eer plein de routes}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_route_spec.rb}
+    \end{center}
+\end{frame}
+
+\section {La couche Vue de Rails}
+
+\begin{frame}
+    \frametitle{Une vue d'index}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{index.html.erb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit permettre de voir les utilisateurs}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{index.html.erb_spec.rb}
+    \end{center}
+\end{frame}
+
+\section{les mocks ?}
+
+\begin{frame}
+  \frametitle{S'il te plait, dessine moi un mock ?}
+  \begin{itemize}
+    \item mock\_model(User)
+    \item Comportement d'un objet ActiveRecord sans access a la BDD
+    \item Possibilite de retourner ce que l'on veux
+    \item Evite de creer une fixture qui gere ce cas la
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Doit s'utiliser dans les controllers}
+  \begin{center}
+    \lstinputlisting[language=Ruby,basicstyle=\tiny,
+      numbers=left]{user_controller_mock.rb}
+  \end{center}
+\end{frame}
+
 
 \end{document}
