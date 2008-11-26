@@ -1,0 +1,232 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\title{Ruby On Rails par Rspec}
+\author{Cyril Mougel}
+
+\logo{\includegraphics[width=10mm]{rails.png}}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Présentation}
+
+\begin{frame}
+	\frametitle{Typo 5.1.3}
+	\begin{itemize}
+		\item supporte uniquement Rails 2.0.2
+		\item Pas d'évolution vers Rails 2.1
+		\item Couverture de code
+	\end{itemize}
+\end{frame}
+
+\section{Migration lié à Rails 2.1}
+
+\begin{frame}
+    \frametitle{Mise à jour du projet}
+    \begin{itemize}
+        \item rake rails:update
+        \item Mise à jour des fichiers de boot
+        \item Mise à jour des fichiers de JS
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mais pourquoi Rspec alors ?}
+    \begin{itemize}
+        \item Rspec == BDD Framework
+        \item Documentation g\'en\'er\'ee plus claire que les Test::Unit
+        \item R\'eutilisation plus simple du comportement
+        \item Ajout des Stories (Cucumber)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Et ca s'installe comment ?}
+    \begin{itemize}
+        \item gem install rspec \&\& gem install rspec-rails
+        \item gem install rspec \&\& ./script/install git://github.com/dchelimsky/rspec-rails.git
+        \item gem install rspec \&\& git-submodule add vendor/plugins/rspec-rails git://github.com/dchelimsky/rspec-rails.git
+    \end{itemize}
+\end{frame}
+
+\section{La couche mod\`ele de Rails}
+
+\begin{frame}
+    \frametitle{Des classes de Mapping a la Base de donn\'ee}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{user_products.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit cr\'eer les accesseurs sur les colonnes}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{user_accessor.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit valider le model}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_valid_model.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit chercher des donn\'ees}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_find.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit avoir des associations}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_association.rb}
+    \end{center}
+\end{frame}
+
+\section{La couche controller de Rails}
+
+\begin{frame}
+    \frametitle{Un controlleur Rails}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_show.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit permettre de voir la liste des utilisateurs}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_index_spec.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit permettre de voir un utilisateur particulier}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_show_spec.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit cr\'eer un utilisateur}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_controller_create_spec.rb}
+    \end{center}
+\end{frame}
+
+\section {Les routes Rails}
+
+\begin{frame}
+    \frametitle{Une simple ligne de route}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_route.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit cr\'eer plein de routes}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{user_route_spec.rb}
+    \end{center}
+\end{frame}
+
+\section {La couche Vue de Rails}
+
+\begin{frame}
+    \frametitle{Une vue d'index}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{index.html.erb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Doit permettre de voir les utilisateurs}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny,
+        numbers=left]{index.html.erb_spec.rb}
+    \end{center}
+\end{frame}
+
+\section{les mocks ?}
+
+\begin{frame}
+  \frametitle{S'il te plait, dessine moi un mock ?}
+  \begin{itemize}
+    \item mock\_model(User)
+    \item Comportement d'un objet ActiveRecord sans access a la BDD
+    \item Possibilite de retourner ce que l'on veux
+    \item Evite de creer une fixture qui gere ce cas la
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Doit s'utiliser dans les controllers}
+  \begin{center}
+    \lstinputlisting[language=Ruby,basicstyle=\tiny,
+      numbers=left]{user_controller_mock.rb}
+  \end{center}
+\end{frame}
+
+
+\end{document}
