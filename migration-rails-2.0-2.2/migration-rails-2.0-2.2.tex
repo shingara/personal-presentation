@@ -78,154 +78,60 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Mais pourquoi Rspec alors ?}
+    \frametitle{Plus de follow\_redirect dans les test de controlleur}
     \begin{itemize}
-        \item Rspec == BDD Framework
-        \item Documentation g\'en\'er\'ee plus claire que les Test::Unit
-        \item R\'eutilisation plus simple du comportement
-        \item Ajout des Stories (Cucumber)
+        \item possibilité d'utiliser follow\_redirect dans un Test::ActionController
+        \item utilisation uniquement dans les test d'intégration
+        \item inutile dans les test d'action
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Et ca s'installe comment ?}
+    \frametitle{Ce qui est déprécié ou supprimé}
     \begin{itemize}
-        \item gem install rspec \&\& gem install rspec-rails
-        \item gem install rspec \&\& ./script/install git://github.com/dchelimsky/rspec-rails.git
-        \item gem install rspec \&\& git-submodule add vendor/plugins/rspec-rails git://github.com/dchelimsky/rspec-rails.git
+        \item render\_partial est supprimé suite à sa déprécition sur Rails 2.0
     \end{itemize}
 \end{frame}
 
-\section{La couche mod\`ele de Rails}
+\section{Migration lié à Rails 2.2}
 
 \begin{frame}
-    \frametitle{Des classes de Mapping a la Base de donn\'ee}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
-        numbers=left]{user_products.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit cr\'eer les accesseurs sur les colonnes}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
-        numbers=left]{user_accessor.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit valider le model}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_valid_model.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit chercher des donn\'ees}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_find.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit avoir des associations}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_association.rb}
-    \end{center}
-\end{frame}
-
-\section{La couche controller de Rails}
-
-\begin{frame}
-    \frametitle{Un controlleur Rails}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_show.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit permettre de voir la liste des utilisateurs}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_index_spec.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit permettre de voir un utilisateur particulier}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_show_spec.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit cr\'eer un utilisateur}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_create_spec.rb}
-    \end{center}
-\end{frame}
-
-\section {Les routes Rails}
-
-\begin{frame}
-    \frametitle{Une simple ligne de route}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_route.rb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit cr\'eer plein de routes}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_route_spec.rb}
-    \end{center}
-\end{frame}
-
-\section {La couche Vue de Rails}
-
-\begin{frame}
-    \frametitle{Une vue d'index}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{index.html.erb}
-    \end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Doit permettre de voir les utilisateurs}
-    \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{index.html.erb_spec.rb}
-    \end{center}
-\end{frame}
-
-\section{les mocks ?}
-
-\begin{frame}
-  \frametitle{S'il te plait, dessine moi un mock ?}
+  \frametitle{relative\_url\_root en configuration de ActionController}
   \begin{itemize}
-    \item mock\_model(User)
-    \item Comportement d'un objet ActiveRecord sans access a la BDD
-    \item Possibilite de retourner ce que l'on veux
-    \item Evite de creer une fixture qui gere ce cas la
+    \item Le helper link\_to utilise relative\_url\_root
+    \item Avant : utilisait @request.relative\_url\_root
+    \item Maintenant : On défini directement dans la configuration :
+    ActionController::Base.relative\_url\_root
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Doit s'utiliser dans les controllers}
-  \begin{center}
-    \lstinputlisting[language=Ruby,basicstyle=\tiny,
-      numbers=left]{user_controller_mock.rb}
-  \end{center}
+    \frametitle{Migration dans des transactions}
+    \begin{itemize}
+        \item Si la migration échoue, pas de mise à jour de la BDD
+        \item raise Exception == Migration Failed, même avec rescue
+        \item Eviter tous les cas de Raise.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Chargement des classes de controller avec cache\_classe = true}
+    \begin{itemize}
+        \item en production cache\_classe = true
+        \item Chargement des classes en mémoire
+        \item rake db:migrate RAILS\_ENV='production' charge classe 
+        \item si appel ActiveRecord en cache du controller == FAILED
+        \item rescue it
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{et des trivialités}
+  \begin{itemize}
+    \item fragment\_cache\_store remplacer par cache\_store
+    \item TextHelper::truncate prend un seul argument avec :length en option.
+    La méthode avec plusieurs argument DEPRECATED
+  \end{itemize}
 \end{frame}
 
 
