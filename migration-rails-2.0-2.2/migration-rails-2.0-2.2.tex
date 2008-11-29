@@ -44,10 +44,12 @@
 }
 
 
-\title{Ruby On Rails par Rspec}
+\title{Migration de Rail 2.0 à 2.2}
 \author{Cyril Mougel}
 
 \logo{\includegraphics[width=10mm]{rails.png}}
+
+\lstnewenvironment{ruby}{\lstset{language=ruby}}{}
 
 \begin{document}
 
@@ -55,7 +57,7 @@
     \titlepage
 \end{frame}
 
-\section{Présentation}
+\section{Pr\'esentation}
 
 \begin{frame}
 	\frametitle{Typo 5.1.3}
@@ -66,7 +68,7 @@
 	\end{itemize}
 \end{frame}
 
-\section{Migration lié à Rails 2.1}
+\section{Blocage lié à Rails 2.1}
 
 \begin{frame}
     \frametitle{Mise à jour du projet}
@@ -80,20 +82,72 @@
 \begin{frame}
     \frametitle{Plus de follow\_redirect dans les test de controlleur}
     \begin{itemize}
-        \item possibilité d'utiliser follow\_redirect dans un Test::ActionController
-        \item utilisation uniquement dans les test d'intégration
-        \item inutile dans les test d'action
+        \item Imossibilité d'utiliser \lstinline!follow_redirect! dans un
+        \lstinline!Test::ActionController!
+        \item Utilisation uniquement dans les test d'intégration
+        \item Inutile dans les test d'action
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Ce qui est déprécié ou supprimé}
+    \lstinline!render_partial! est supprimé suite à sa déprécation sur Rails
+        2.0
+        
+    Utiliser \lstinline!render :partial!
+\end{frame}
+
+\section{Amélioration possible avec Rails 2.1}
+
+\begin{frame}[fragile]
+    \frametitle{Ajout des .last et .first}
+    Plus besoin d'écrire find(:first) ou find(:last) 
+
+    Maintenant User.first et User.last fonctionne.
+
+    \begin{columns}
+        \begin{column}[l]{4cm}
+            \begin{lstlisting}[language=Ruby]
+User.find(:first)
+User.find(:last)
+            \end{lstlisting}
+        \end{column}
+        \begin{column}[c]{1cm}
+        =>
+        \end{column}
+        \begin{column}[r]{4cm}
+            \begin{lstlisting}[language=Ruby]
+User.first
+User.last
+            \end{lstlisting}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{named\_scope}
+            \begin{lstlisting}[language=Ruby,showstringspaces=false ]
+named_scope :published_articles, 
+                :conditions => { :published => true }, 
+                :order => 'published_at DESC'
+            \end{lstlisting}
+            \begin{lstlisting}[language=Ruby,showstringspaces=false]
+named_scope :with_char, lambda { |*args| 
+    :conditions => ['name LIKE ? ', 
+                    "%#{args.first}%"]
+}
+            \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{suivi des évolutions du model}
     \begin{itemize}
-        \item render\_partial est supprimé suite à sa déprécition sur Rails 2.0
+        \item article.changed?
+        \item => UPDATE body='foo' FROM contents where id='12'
     \end{itemize}
 \end{frame}
 
-\section{Migration lié à Rails 2.2}
+\section{Blocage lié à Rails 2.2}
 
 \begin{frame}
   \frametitle{relative\_url\_root en configuration de ActionController}
@@ -132,6 +186,43 @@
     \item TextHelper::truncate prend un seul argument avec :length en option.
     La méthode avec plusieurs argument DEPRECATED
   \end{itemize}
+\end{frame}
+
+\section{Amélioration possible avec Rails 2.2}
+
+\begin{frame}[fragile]
+    \frametitle{les conditions par Hash}
+    \begin{lstlisting}[Language=Ruby]
+Article.all(:conditions => { 
+        :created_at => 5.day.ago,
+        :tags => { :name => 'foo' }})
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{facilité de mémoization}
+    Utilisation simple de la mémoization
+    \begin{columns}
+        \begin{column}[l]{4cm}
+            \begin{lstlisting}[language=Ruby, frame=single]
+def fields
+  @fields ||= []
+end
+            \end{lstlisting}
+        \end{column}
+        \begin{column}[c]{1cm}
+         =>
+        \end{column}
+        \begin{column}[r]{4cm}
+            \begin{lstlisting}[language=Ruby, frame=single]
+def fields
+  @fields = []
+end
+memoize :fields
+            \end{lstlisting}
+        \end{column}
+    \end{columns}
+
 \end{frame}
 
 
