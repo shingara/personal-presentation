@@ -35,6 +35,7 @@
 \usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{verbatim}
 \usepackage{color}
+\date{30 Décembre 2008}
 
 \AtBeginSection[]
 {
@@ -73,8 +74,11 @@
     \frametitle{Test::Unit de base dans Rails}
     \begin{itemize}
         \item Dossier test cr\'e\'e \`a chaque cr\'eation de projet Rails
-        \item Stats de nombre de LOC et LOC de test (TODO: mettre image ici)
-        \item Possibilite de tester chaque couche de Rails
+        \item Stats de nombre du LOC et LOC de test \\
+            \begin{center}
+                \includegraphics[width=80mm]{stats.png}     
+            \end{center}
+        \item Possibilité de tester chaque couche de Rails
     \end{itemize}
 \end{frame}
 
@@ -83,6 +87,9 @@
     \begin{itemize}
         \item Rspec == BDD Framework
         \item Documentation g\'en\'er\'ee plus claire que les Test::Unit
+            \begin{center}
+                \includegraphics[width=80mm]{rspec-example} 
+            \end{center}
         \item R\'eutilisation plus simple du comportement
         \item Ajout des Stories (Cucumber)
     \end{itemize}
@@ -92,15 +99,17 @@
     \frametitle{Et ca s'installe comment ?}
     \begin{itemize}
         \item gem install rspec \&\& gem install rspec-rails
-        \item gem install rspec \&\& ./script/install git://github.com/dchelimsky/rspec-rails.git
-        \item gem install rspec \&\& git-submodule add vendor/plugins/rspec-rails git://github.com/dchelimsky/rspec-rails.git
+        \item gem install rspec \&\& \\
+            ./script/install git://github.com/dchelimsky/rspec-rails.git
+        \item gem install rspec \&\& \\
+            git-submodule add vendor/plugins/rspec-rails git://github.com/dchelimsky/rspec-rails.git
     \end{itemize}
 \end{frame}
 
 \section{La couche mod\`ele de Rails}
 
 \begin{frame}
-    \frametitle{Des classes de Mapping a la Base de donn\'ee}
+    \frametitle{Des classes de Mapping à la Base de donn\'ee}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
         numbers=left,showstringspaces=false]{user_products.rb}
@@ -111,7 +120,7 @@
     \frametitle{Doit cr\'eer les accesseurs sur les colonnes}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
-        numbers=left]{user_accessor.rb}
+        numbers=left,showstringspaces=false]{user_accessor.rb}
     \end{center}
 \end{frame}
 
@@ -119,7 +128,7 @@
     \frametitle{Doit valider le model}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_valid_model.rb}
+        numbers=left,showstringspaces=false]{user_valid_model.rb}
     \end{center}
 \end{frame}
 
@@ -127,7 +136,7 @@
     \frametitle{Doit chercher des donn\'ees}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_find.rb}
+        numbers=left,showstringspaces=false]{user_find.rb}
     \end{center}
 \end{frame}
 
@@ -135,7 +144,7 @@
     \frametitle{Doit avoir des associations}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_association.rb}
+        numbers=left,showstringspaces=false]{user_association.rb}
     \end{center}
 \end{frame}
 
@@ -153,7 +162,7 @@
     \frametitle{Doit permettre de voir la liste des utilisateurs}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_index_spec.rb}
+        numbers=left,showstringspaces=false]{user_controller_index_spec.rb}
     \end{center}
 \end{frame}
 
@@ -161,7 +170,7 @@
     \frametitle{Doit permettre de voir un utilisateur particulier}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_show_spec.rb}
+        numbers=left,showstringspaces=false]{user_controller_show_spec.rb}
     \end{center}
 \end{frame}
 
@@ -169,7 +178,7 @@
     \frametitle{Doit cr\'eer un utilisateur}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_controller_create_spec.rb}
+        numbers=left,showstringspaces=false]{user_controller_create_spec.rb}
     \end{center}
 \end{frame}
 
@@ -187,7 +196,7 @@
     \frametitle{Doit cr\'eer plein de routes}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{user_route_spec.rb}
+        numbers=left,showstringspaces=false]{user_route_spec.rb}
     \end{center}
 \end{frame}
 
@@ -197,7 +206,7 @@
     \frametitle{Une vue d'index}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{index.html.erb}
+        numbers=left,showstringspaces=false]{index.html.erb}
     \end{center}
 \end{frame}
 
@@ -205,7 +214,7 @@
     \frametitle{Doit permettre de voir les utilisateurs}
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\tiny,
-        numbers=left]{index.html.erb_spec.rb}
+        numbers=left,showstringspaces=false]{index.html.erb_spec.rb}
     \end{center}
 \end{frame}
 
@@ -217,7 +226,7 @@
     \item mock\_model(User)
     \item Comportement d'un objet ActiveRecord sans access a la BDD
     \item Possibilite de retourner ce que l'on veux
-    \item Evite de creer une fixture qui gere ce cas la
+    \item Evite de créer une fixture qui gere ce cas la
   \end{itemize}
 \end{frame}
 
@@ -225,8 +234,15 @@
   \frametitle{Doit s'utiliser dans les controllers}
   \begin{center}
     \lstinputlisting[language=Ruby,basicstyle=\tiny,
-      numbers=left]{user_controller_mock.rb}
+      numbers=left,showstringspaces=false]{user_controller_mock.rb}
   \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \huge{}
+    Question ?
+    \end{center}
 \end{frame}
 
 

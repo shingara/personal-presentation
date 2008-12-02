@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
 end
 
 class Product < ActiveRecord::Base
-  has_one :user
+  belongs_to :user
 end

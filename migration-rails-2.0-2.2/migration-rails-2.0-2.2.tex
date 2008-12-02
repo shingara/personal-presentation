@@ -57,7 +57,7 @@
     \titlepage
 \end{frame}
 
-\section{Pr\'esentation}
+\section{Context}
 
 \begin{frame}
 	\frametitle{Typo 5.1.3}
@@ -82,7 +82,7 @@
 \begin{frame}
     \frametitle{Plus de follow\_redirect dans les test de controlleur}
     \begin{itemize}
-        \item Imossibilité d'utiliser \lstinline!follow_redirect! dans un
+        \item Impossibilité d'utiliser \lstinline!follow_redirect! dans un
         \lstinline!Test::ActionController!
         \item Utilisation uniquement dans les test d'intégration
         \item Inutile dans les test d'action
@@ -126,7 +126,7 @@ User.last
 
 \begin{frame}[fragile]
     \frametitle{named\_scope}
-            \begin{lstlisting}[language=Ruby,showstringspaces=false ]
+            \begin{lstlisting}[language=Ruby,showstringspaces=false]
 named_scope :published_articles, 
                 :conditions => { :published => true }, 
                 :order => 'published_at DESC'
@@ -143,6 +143,7 @@ named_scope :with_char, lambda { |*args|
     \frametitle{suivi des évolutions du model}
     \begin{itemize}
         \item article.changed?
+        \item article.name\_changed?
         \item => UPDATE body='foo' FROM contents where id='12'
     \end{itemize}
 \end{frame}
@@ -223,6 +224,13 @@ memoize :fields
         \end{column}
     \end{columns}
 
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \huge{}
+    Question ?
+    \end{center}
 \end{frame}
 
 
