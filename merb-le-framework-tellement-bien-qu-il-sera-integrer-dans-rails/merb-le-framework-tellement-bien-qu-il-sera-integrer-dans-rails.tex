@@ -1,0 +1,167 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\title{Merb, Le framework tellement bien qu'il sera intégré dans Rails}
+\author{Cyril Mougel}
+
+\logo{\includegraphics[width=10mm]{merb.png}}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Merb, c'est quoi ?}
+
+\begin{frame}
+	\frametitle{Un coquille vide ?}
+	\begin{itemize}
+		\item Non, car utilisé dans plein de projet
+		\item Non, car sinon il ne serait pas mergé dans Rails
+		\item Non, car il a entrainé des flameware comme Vim/Emacs
+        \item Non, car la majeur partie des Merbistes sont des Railers
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{C'est partie comment ?}
+    \begin{itemize}
+        \item "Start has a hack"
+        \item http://pastie.org/14416
+        \item Ezmobius et Wycats
+        \item "No code is faster than no code"
+    \end{itemize}
+\end{frame}
+
+\section{Les concepts de Merb}
+
+\begin{frame}
+    \frametitle{La différence par rapport à Ruby On Rails ?}
+    \begin{itemize}
+        \item ORM Agnostic
+        \item Javascript Agnostic
+        \item Modulaire
+        \item API Public
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les points communs avec Ruby On Rails}
+    \begin{itemize}
+        \item MVC
+        \item View Agnostic
+        \item Rack based (nouveau chez Rails 2.2)
+        \item Thread safe (nouveau chez Rails 2.2)
+    \end{itemize}
+\end{frame}
+
+\section{Les différentes partie de Merb}
+
+\begin{frame}
+    \frametitle{Merb-core}
+    \begin{itemize}
+        \item équivalent à ActionPack mais en light
+        \item Routing, Rack, Bootloader, Controller
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Merb-more}
+    \begin{itemize}
+        \item Le reste d'ActionPack
+        \item Des gems pratiques pour certaine options (merb-mailer,
+                merb-cache, merb-action-args)
+        \item Utile, mais non critique
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Merb-plugins}
+    \begin{itemize}
+        \item Maintenu par le Merb Core Team
+        \item Les gems de communication avec les différentes briques
+        (merb-sequel, merb-datamapper, merb-activerecord, etc...)
+        \item Non essentiel
+    \end{itemize}
+\end{frame}
+
+\section{En pratique ?}
+
+\begin{frame}
+    \frametitle{Render - Display - provides}
+    \begin{itemize}
+        \item On affiche une vue (Render)
+        \item On rend une resource (Display)
+        \item On fournit des formats (provides)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Render}
+
+    Un exemple de controller utilisant render :
+
+
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{controller_with_render.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Display}
+
+    Un exemple de controller utilisant Display :
+
+
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
+        numbers=left]{controller_with_display.rb}
+    \end{center}
+\end{frame}
+
+\end{document}
