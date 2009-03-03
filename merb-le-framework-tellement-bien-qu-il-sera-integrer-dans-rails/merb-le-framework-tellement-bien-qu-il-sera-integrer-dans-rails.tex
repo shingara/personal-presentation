@@ -173,10 +173,32 @@
 
 \begin{frame}
     Sans
+    \\
             \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{controller_without_actions-args.rb}
 
     Avec
+    \\
+
             \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{controller_with_actions-args.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Les routeurs}
+
+  \begin{itemize}
+    \item Resources ( resources :articles )
+    \item Très lisible ( match("/about").to(:controller => "main", :action =>
+                "about").name(:about) )
+    \item url(:about)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{merb-slice}
+\end{frame}
+
+\begin{frame}
+    \frametitle{merb-cache}
 \end{frame}
 
 \end{document}
