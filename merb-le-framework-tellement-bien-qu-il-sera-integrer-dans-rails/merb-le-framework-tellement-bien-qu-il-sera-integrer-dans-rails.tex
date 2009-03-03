@@ -145,10 +145,8 @@
 
     Un exemple de controller utilisant render :
 
-
     \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
-        numbers=left]{controller_with_render.rb}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize, numbers=left]{controller_with_render.rb}
     \end{center}
 \end{frame}
 
@@ -159,9 +157,26 @@
 
 
     \begin{center}
-        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,
-        numbers=left]{controller_with_display.rb}
+        \lstinputlisting[language=Ruby,basicstyle=\scriptsize,numbers=left]{controller_with_display.rb}
     \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{merb-action-args}
+
+    \begin{itemize}
+        \item Des paramètres sur les actions ?
+        \item Simplifie les controllers
+        \item Basé sur ParseTree
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Sans
+            \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{controller_without_actions-args.rb}
+
+    Avec
+            \lstinputlisting[language=Ruby,numbers=left,basicstyle=\tiny]{controller_with_actions-args.rb}
 \end{frame}
 
 \end{document}
