@@ -46,6 +46,7 @@
 
 \title{Merb, Le framework tellement bien qu'il sera intégré dans Rails}
 \author{Cyril Mougel}
+\date{07 Mars 2009}
 
 \logo{\includegraphics[width=10mm]{merb.png}}
 
@@ -195,10 +196,49 @@
 
 \begin{frame}
     \frametitle{merb-slice}
+    \begin{itemize}
+        \item Inspiré des app de Django
+        \item Une sorte de mini application Merb
+        \item On y défini :
+        \begin{itemize}
+            \item Ses routes
+            \item Ses controllers dans un namespace
+            \item Ses modèles
+        \end{itemize}
+        \item router.rb : slice(:merb\_static\_pages\_slice, :path => "static")
+        \item merb-auth la slice d'authentification
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{merb-cache}
+    \begin{itemize}
+        \item Une seule méthode : cache
+        \item On invalid le cache avec eager\_cache
+        \item Pas différente méthode, juste différente option
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \lstinputlisting[language=Ruby,basicstyle=\tiny, numbers=left]{controller_with_cache.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les resources ?}
+    \begin{itemize}
+        \item http://wiki.merbivore.org
+        \item http://merbivore.org/documentation.html
+        \item http://merbunity.com/
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \huge{}
+    questions ?
+    \end{center}
 \end{frame}
 
 \end{document}
