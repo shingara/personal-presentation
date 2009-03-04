@@ -61,17 +61,17 @@
 \begin{frame}
 	\frametitle{Un coquille vide ?}
 	\begin{itemize}
-		\item Non, car utilisé dans plein de projet
+		\item Non, car utilisé dans plein de projets
 		\item Non, car sinon il ne serait pas mergé dans Rails
-		\item Non, car il a entrainé des flameware comme Vim/Emacs
-        \item Non, car la majeur partie des Merbistes sont des Railers
+		\item Non, car il a entrainé des flamewars comme Vim/Emacs
+        \item Non, car la majeure partie des Merbistes sont des Railers
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{C'est partie comment ?}
+    \frametitle{C'est parti comment ?}
     \begin{itemize}
-        \item "Start has a hack"
+        \item "Started as a hack"
         \item http://pastie.org/14416
         \item Ezmobius et Wycats
         \item "No code is faster than no code"
@@ -83,10 +83,10 @@
 \begin{frame}
     \frametitle{La différence par rapport à Ruby On Rails ?}
     \begin{itemize}
-        \item ORM Agnostic
-        \item Javascript Agnostic
+        \item ORM-agnostic
+        \item Javascript-agnostic
         \item Modulaire
-        \item API Public
+        \item API publique
     \end{itemize}
 \end{frame}
 
@@ -94,18 +94,18 @@
     \frametitle{Les points communs avec Ruby On Rails}
     \begin{itemize}
         \item MVC
-        \item View Agnostic
-        \item Rack based (nouveau chez Rails 2.2)
-        \item Thread safe (nouveau chez Rails 2.2)
+        \item View-agnostic
+        \item Rack-based (nouveau depuis Rails 2.2)
+        \item Thread-safe (nouveau depuis Rails 2.2)
     \end{itemize}
 \end{frame}
 
-\section{Les différentes partie de Merb}
+\section{Les différentes parties de Merb}
 
 \begin{frame}
     \frametitle{Merb-core}
     \begin{itemize}
-        \item équivalent à ActionPack mais en light
+        \item Équivalent à ActionPack mais en light
         \item Routing, Rack, Bootloader, Controller
     \end{itemize}
 \end{frame}
@@ -114,7 +114,7 @@
     \frametitle{Merb-more}
     \begin{itemize}
         \item Le reste d'ActionPack
-        \item Des gems pratiques pour certaine options (merb-mailer,
+        \item Des gems pratiques pour certaines options (merb-mailer,
                 merb-cache, merb-action-args)
         \item Utile, mais non critique
     \end{itemize}
@@ -123,7 +123,7 @@
 \begin{frame}
     \frametitle{Merb-plugins}
     \begin{itemize}
-        \item Maintenu par le Merb Core Team
+        \item Maintenu par la Merb Core Team
         \item Les gems de communication avec les différentes briques
         (merb-sequel, merb-datamapper, merb-activerecord, etc...)
         \item Non essentiel
@@ -133,11 +133,11 @@
 \section{En pratique ?}
 
 \begin{frame}
-    \frametitle{Render - Display - provides}
+    \frametitle{render - display - provides}
     \begin{itemize}
-        \item On affiche une vue (Render)
-        \item On rend une resource (Display)
-        \item On fournit des formats (provides)
+        \item On affiche une vue (\texttt{render})
+        \item On rend une resource (\texttt{display})
+        \item On fournit des formats (\texttt{provides})
     \end{itemize}
 \end{frame}
 
@@ -155,7 +155,6 @@
     \frametitle{Display}
 
     Un exemple de controller utilisant Display :
-
 
     \begin{center}
         \lstinputlisting[language=Ruby,basicstyle=\scriptsize,numbers=left]{controller_with_display.rb}
@@ -187,35 +186,35 @@
   \frametitle{Les routeurs}
 
   \begin{itemize}
-    \item Resources ( resources :articles )
-    \item Très lisible ( match("/about").to(:controller => "main", :action =>
-                "about").name(:about) )
-    \item url(:about)
+    \item Ressources ( \texttt{resources :articles} )
+    \item Très lisible ( 
+      \texttt{match("/about").to(:controller => "main", :action => "about").name(:about)} )
+    \item \texttt{url(:about)}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{merb-slice}
     \begin{itemize}
-        \item Inspiré des app de Django
+        \item Inspiré des apps de Django
         \item Une sorte de mini application Merb
-        \item On y défini :
+        \item On y définit :
         \begin{itemize}
             \item Ses routes
-            \item Ses controllers dans un namespace
+            \item Ses controlleurs dans un namespace
             \item Ses modèles
         \end{itemize}
-        \item router.rb : slice(:merb\_static\_pages\_slice, :path => "static")
-        \item merb-auth la slice d'authentification
+        \item router.rb : \texttt{slice(:merb\_static\_pages\_slice, :path => "static")}
+        \item merb-auth: la slice d'authentification
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{merb-cache}
     \begin{itemize}
-        \item Une seule méthode : cache
-        \item On invalid le cache avec eager\_cache
-        \item Pas différente méthode, juste différente option
+        \item Une seule méthode : \texttt cache
+        \item On invalide le cache avec \texttt{eager\_cache}
+        \item Pas de différentes méthodes, juste de différentes options
     \end{itemize}
 \end{frame}
 
@@ -226,7 +225,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les resources ?}
+    \frametitle{Les ressources ?}
     \begin{itemize}
         \item http://wiki.merbivore.org
         \item http://merbivore.org/documentation.html
