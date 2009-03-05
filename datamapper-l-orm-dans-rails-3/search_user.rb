@@ -1,0 +1,7 @@
+Zoo.first(:name.eql => 'Galveston')
+Person.all(:age.gt => 30)
+Person.all(:age.gte => 30)
+Person.all(:name.not => 'bob')
+Person.all(:name.like => 'S%', :id => [1, 2, 3, 4, 5])
+Person.all(:name.not => ['bob','rick','steve'])
+Person.all(:order => [:age.desc])

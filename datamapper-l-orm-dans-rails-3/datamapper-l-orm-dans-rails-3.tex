@@ -1,0 +1,199 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\title{DataMapper, l'ORM dans Rails 3 ?}
+\author{Cyril Mougel}
+\date{07 Mars 2009}
+
+\logo{\includegraphics[width=30mm]{datamapper.jpeg}}
+
+\lstset{ breaklines=true,language=ruby,numbers=left,tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{DataMapper c'est quoi ?}
+
+\begin{frame}
+	\frametitle{DataMapper c'est quoi ?}
+	\begin{itemize}
+        \item Commencé en Février 2007
+        \item Objet Relationel Model (Model Object Relationnel)
+        \item Supporté uniquement par la communauté
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pourquoi DataMapper ?}
+    \begin{itemize}
+        \item L'identity Map
+        \item La gestion des multi-repository natif
+        \item Lazy loading
+        \item Eager loading
+        \item Tout est ruby
+        \item Modulaire
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Identity Map}
+    \begin{itemize}
+        \item \lstinline{User.first == User.first}
+        \item \lstinline{User.first == User.get(1)}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Gestion des multi-repository natif}
+    \begin{itemize}
+        \item \lstinline{User.all(:repository => :other)}
+        \item \lstinline{User.all \# :repository => :default}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lazy Loading}
+    \begin{center}
+        \lstinputlisting[basicstyle=\scriptsize]{lazy_loading.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Eager Loading}
+    \begin{center}
+        \lstinputlisting[basicstyle=\scriptsize]{eager_loading.rb}
+    \end{center}
+\end{frame}
+
+\section{Les base de DataMapper}
+
+\begin{frame}
+    \frametitle{Un classe Model}
+    \begin{itemize}
+        \item Hérite seulement de Object
+        \item Include de \lstinline{include DataMapper::Resource}
+        \item Les propriétés déclaré dans les classes modèles
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \lstinputlisting{model_user.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{La recherche avec DataMapper}
+    \begin{center}
+        \lstinputlisting{search_user.rb}
+    \end{center}
+\end{frame}
+
+\section{Les plugins DataMapper}
+
+\begin{frame}
+    \frametitle{dm-validations}
+
+    \begin{itemize}
+        \item validates\_xxx
+        \item validation dans les properties directement
+    \end{itemize}
+
+    \begin{center}
+        \lstinputlisting[basicstyle=\scriptsize]{validate_user.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{dm-migrations}
+
+    \begin{center}
+        \lstinputlisting[basicstyle=\scriptsize]{user_migration.rb}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{plein d'autre plugins}
+
+    \begin{itemize}
+        \item dm-types
+        \item dm-timestamp
+        \item dm-tags
+        \item dm-sweatshop
+        \item dm-constraints
+        \item dm-is-list
+        \item etc..
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Les ressources ?}
+    \begin{itemize}
+        \item http://datamapper.org
+        \item http://github.com/datamapper
+        \item http://groups.google.com/group/datamapper
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \huge{}
+    questions ?
+    \end{center}
+\end{frame}
+
+\end{document}
