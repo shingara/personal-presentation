@@ -1,0 +1,105 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\title{Cucumber, le texte qui teste}
+\author{Cyril Mougel}
+\date{15 Août 2009}
+
+\logo{\includegraphics[width=30mm]{cucumber.png}}
+
+\lstset{ 
+  breaklines=true,language=ruby,numbers=left,tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Cucumber c'est quoi ?}
+
+\begin{frame}
+	\frametitle{Cucumber c'est quoi ?}
+	\begin{itemize}
+    \item Test d'intégration
+    \item BDD
+    \item Héritier des Stories de Rspec
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Format des tests}
+    \begin{itemize}
+        \item Business Readable DSL
+        \item Fichier texte
+        \item Given
+        \item When
+        \item Then
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Un exemple ?}
+  \begin{center}
+    \lstinputlisting[basicstyle=\scriptsize]{login.feature}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+    \huge{}
+    questions ?
+    \end{center}
+\end{frame}
+
+\end{document}
