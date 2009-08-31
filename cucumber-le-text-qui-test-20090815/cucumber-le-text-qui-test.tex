@@ -51,7 +51,10 @@
 \logo{\includegraphics[width=30mm]{cucumber.png}}
 
 \lstset{ 
-  breaklines=true,language=ruby,numbers=left,tabsize=2
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
     , basicstyle=\small\ttfamily
     , keywordstyle=\color{blue}
     , commentstyle=\color{green}
@@ -90,8 +93,16 @@
 
 \begin{frame}
   \frametitle{Un exemple ?}
+  \begin{beamerboxesrounded}{login.feature}
+    %% TODO: add color in cucumber style
+    \lstinputlisting[language=,numbers=none]{login.feature}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Résultat ?}
   \begin{center}
-    \lstinputlisting[basicstyle=\scriptsize]{login.feature}
+    \includegraphics[scale=.3]{cucumber_stdout}
   \end{center}
 \end{frame}
 
