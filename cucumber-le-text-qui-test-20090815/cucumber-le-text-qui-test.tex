@@ -61,6 +61,7 @@
     , stringstyle=\color{red}
     , identifierstyle=\ttfamily
     , columns=fixed
+    , showstringspaces=false
 }
 
 \begin{document}
@@ -81,14 +82,11 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Format des tests}
-    \begin{itemize}
-        \item Business Readable DSL
-        \item Fichier texte
-        \item Given
-        \item When
-        \item Then
-    \end{itemize}
+  \frametitle{Format des tests}
+  \begin{itemize}
+    \item Business Readable DSL
+    \item Fichier texte
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -100,10 +98,74 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Résultat ?}
+  \begin{itemize}
+    \item But
+    \item Rôle
+    \item Resultat
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}
+    \item Context
+    \item Action
+    \item R\'esultat
+  \end{itemize}
+\end{frame}
+
+\section{installation}
+
+\begin{frame}
+  \frametitle{installation}
+  \begin{itemize}
+    \item gem install rspec rspec-rails cucumber webrat
+    \item ruby script/generate cucumber
+  \end{itemize}
+\end{frame}
+
+\section{utilisation}
+
+\begin{frame}
+  \includegraphics[scale=.4]{features_with_step_undefined}
+\end{frame}
+
+\begin{frame}
   \begin{center}
-    \includegraphics[scale=.3]{cucumber_stdout}
+    \includegraphics[scale=.5]{step_missing}
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{tabbing}
+    feat\=ures/ \\
+    \> login.feature \\
+    \> step\=\_definitions/ \\
+    \> \> login\_steps.rb \\
+  \end{tabbing}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Given == Setup}
+  \begin{beamerboxesrounded}{Given step}
+    %% TODO: add color in cucumber style
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{given_step.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{When == Modfification}
+  \begin{beamerboxesrounded}{When step}
+    %% TODO: add color in cucumber style
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{when_step.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Then == R\'esultat}
+  \begin{beamerboxesrounded}{Then step}
+    %% TODO: add color in cucumber style
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{then_step.rb}
+  \end{beamerboxesrounded}
 \end{frame}
 
 \begin{frame}
