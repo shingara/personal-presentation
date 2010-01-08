@@ -1,0 +1,111 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\title{Les types primitifs}
+\author{Cyril Mougel}
+
+\lstset{
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+    , showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\Large{}
+
+\begin{frame}
+	\frametitle{L'historique}
+	\begin{itemize}
+		\item Créé en 1993 par Yukihiro Matsumoto dit \og{}Matz\fg{}
+		\item Langage de scripting de haut niveau
+		\item Plus qu'orienté objet: tout est objet
+        \item Applique le principe de moindre surprise (POLS, \emph{principle of
+                least surprise})
+        \item Fonctionne sur les plateformes les plus populaires du marché (Linux, Windows,
+                Mac)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{G\'en\'eralit\'e sur le langage}
+  \begin{itemize}
+    \item typage dynamique
+    \item pas d'obligation de parenthèse
+    \item pas de main
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier programme}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{first_prog.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les Nombres}
+
+\begin{frame}
+  \begin{itemize}
+    \item Integer
+    \item Float
+    \item Operateur ( * + - / \% )
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les nombres}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{number.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les Strings}
+\section{Les Symbols}
+
+\end{document}
