@@ -9,12 +9,14 @@ puts HELLO # foo
 
 class Hello
 
-  def self.bar(foo)
-    @@foo = foo
-  end
+  class << self
+    def bar(foo)
+      @@foo = foo
+    end
 
-  def self.baz
-    @@foo
+    def baz
+      @@foo
+    end
   end
 end
 
