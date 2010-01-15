@@ -1,8 +1,12 @@
 puts nil.class # NilClass
 
 class Car
+  def initialize(door)
+    @door = door
+  end
+
   def door
-    3
+    @door
   end
 end
 
@@ -12,10 +16,10 @@ class AutoCar < Car
   end
 end
 
-autocar = AutoCar.new
+autocar = AutoCar.new(3)
 puts autocar.door     # 3
 puts autocar.chauffeur # true
 
-car = Car.new
+car = Car.new(3)
 puts car.door      # 3
 puts car.chauffeur # NoMethodError

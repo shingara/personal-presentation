@@ -107,6 +107,7 @@
 \section{Les Nombres}
 
 \begin{frame}
+  \frametitle{Les nombres}
   \begin{itemize}
     \item Integer
     \item Float
@@ -123,6 +124,7 @@
 \section{Les opérateurs}
 
 \begin{frame}
+  \frametitle{Les op\'erateurs}
   \begin{itemize}
     \item and or \&\& \textbar\textbar
     \item \textless= \textless \textgreater \textgreater=
@@ -137,6 +139,7 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Encore plus d'op\'erateurs}
   \begin{itemize}
     \item combinaison des op\'erateurs
     \item pas de ++ ou de - -
@@ -152,6 +155,7 @@
 \section{Les Strings}
 
 \begin{frame}
+  \frametitle{Les Strings}
   \begin{itemize}
     \item Diff\'erence entre " et '
     \item Concat\'enation
@@ -168,6 +172,7 @@
 \section{Les Symbols}
 
 \begin{frame}
+  \frametitle{Les symbols}
   \begin{itemize}
     \item Identifiant unique
     \item Presque comme des strings
@@ -185,6 +190,7 @@
 \section{L'assignation}
 
 \begin{frame}
+  \frametitle{L'assignation}
   \begin{itemize}
     \item De gauche à droite
     \item multiple
@@ -200,8 +206,10 @@
 \section{Récupération de l'entrée standard}
 
 \begin{frame}
+  \frametitle{STDIN}
   \begin{itemize}
     \item STDOUT
+    \item STDIN
     \item gets
     \item chomp
   \end{itemize}
@@ -216,6 +224,7 @@
 \section{Les variables}
 
 \begin{frame}
+  \frametitle{Les variables}
   \begin{itemize}
     \item Variable locale
     \item Variable globale
@@ -261,6 +270,7 @@
   \begin{itemize}
     \item Tout est classes, même nil
     \item H\'eritage
+    \item Constructeur
   \end{itemize}
 \end{frame}
 
@@ -286,7 +296,7 @@
 \end{frame}
 
 \begin{frame}
-  \begin{beamerboxesrounded}{Ouverture de classe}
+  \begin{beamerboxesrounded}{Ouverture d'instance}
     \lstinputlisting[numbers=none,basicstyle=\tiny]{open_instance.rb}
   \end{beamerboxesrounded}
 \end{frame}
@@ -302,6 +312,58 @@
   \begin{beamerboxesrounded}{Self}
     \lstinputlisting[numbers=none,basicstyle=\tiny]{self.rb}
   \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{M\'ethode de classe Vs M\'ethode d'instance}
+  \begin{itemize}
+    \item Une seule classe
+    \item Plusieurs instance
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{M\'ethode d'instance \\ M\'ethode de classe}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{instance_classe.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Modules}
+
+\begin{frame}
+  \frametitle{Un module}
+  \begin{itemize}
+    \item Namespace
+    \item Collection de m\'ethodes
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Un module}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{module.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{include de module}
+  \begin{itemize}
+    \item Mixin
+    \item Ajout des m\'ethodes comme des m\'ethodes d'instance
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Include d'un module}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{include_module.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Super}
+  \begin{itemize}
+    \item Appel de la m\'ethode parente de la classe mère
+    \item Appel de la m\'ethode parente dans les modules
+  \end{itemize}
 \end{frame}
 
 

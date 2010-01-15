@@ -1,0 +1,103 @@
+Cours de Ruby
+
+ == Syntaxe ==
+
+
+ ( 2 heures )
+
+  * Les nombres
+  * Les Strings
+  * Les Symbol
+
+ * irb
+
+ * Tout est classes
+ * Définission d'une classe
+    * attribut d'instance
+    * Attribut de classe
+ * Définission d'une méthode,
+    * Pas de type
+    * Argument optionnel
+    * Méthode de classe
+    * Méthode d'instance
+ * Définission d'un module
+   * Namespace
+   * Jeu de méthode
+   * Les includes
+   * Les extends
+ * require
+
+ * alias
+ * super
+
+ ( 2 heures )
+ * Les expressions
+   * Cas d'une boucle
+     * retry
+     * next
+     * break
+ * Regexp
+
+ == STDLIB ==
+
+ ( 2 heures )
+ * La classe Kernel / Object
+ * Les Array
+   * L'explosion d'array (*)
+ * Les Hash
+
+ ( 2 heures )
+ * Les blocks / Proc
+ * Les Exceptions
+   * rescue
+   * ensure
+   * raise
+
+ == Spécial Ing2 ==
+   * Logger
+
+   * IO
+     * STDIN
+     * STDOUT
+     * File
+
+  ( 2 heures )
+  * Thread
+     * EventMachine ???
+     * Thread
+     * Fork
+
+  ( 2 heures )
+  * Metaprogrammation
+
+ == Gems utiles ==
+
+ ( 2 heures )
+
+ * rubygems
+ * ruby-debug
+
+ ( 2 heures )
+ * test-unit
+
+
+Cours Rails
+
+ ( 2 heures )
+ * MVC
+ * Scaffolding
+ * ActiveRecord
+
+ ( 2 heures )
+ * ActionPack
+ * ActionView
+
+ ( 2 heures )
+ * Plugins
+   * WillPaginate
+   * Créer son plugin
+
+ ( 2 heures )
+ * Déployement
+   * Thin/Passenger
+   * Capistrano
