@@ -1,0 +1,186 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\title{D\'ebuter en Ruby}
+\author{Cyril Mougel}
+
+\lstset{
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+    , showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{require}
+  \begin{itemize}
+    \item inclus les fichiers dans la pile d'execution
+    \item avec extension si path complet
+    \item \$LOAD\_PATH et nom du fichier direct
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{require}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{require.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{if else}
+  \begin{itemize}
+    \item se ferme par un end
+    \item elsif
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{if else elsif}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{if_else.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{test unitaire}
+  \begin{itemize}
+    \item H\'erite Test::Units::TestCase
+    \item m\'ethode commençant par test\_
+    \item assert\_equal
+    \item assert
+    \item http://www.ruby-doc.org/core/classes/Test/Unit.html
+    \item setup
+    \item teardown
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Test Unitaire}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_1.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cr\'eation d'une classe}
+  Ecrire une classe qui se nomme Car. Elle doit avoir une m\'ethode d'instance qui
+  se nomme 'running?' et qui renvoi true ou false.
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier Exercice}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_1.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  La classe Car doit avoir une m\'ethode 'run' qui d\'emarre la voiture.
+  Une fois la voiture d\'emarrer elle doit donc avoir la m\'ethode running? qui
+  renvoi true
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier Exercice}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_2.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  Ajouter une m\'ethode 'stop' qui arrete la voiture de rouler. La m\'ethode running?
+  doit donc renvoyer cette fois-ci false
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier Exercice}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_3.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  Indiquer un attribut d'instance accessible en \'ecriture qui indique le nombre de
+  de fois que la voiture s'est arrêt\'ee.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier Exercice}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_4.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  Permettre d'ajouter un nombre de d\'emarrage/Arrêt lors de la cr\'eation
+  d'un objet 'Car'
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier Exercice}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_5.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  Ajouter une m\'ethode de classe 'nb_car' qui indique le nombre de voiture actuellement en
+  service.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier Exercice}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_6.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\begin{frame}
+
+  \begin{itemize}
+    \item nb\_stop qui donne le nombre d'arrêt de la voiture
+  \end{itemize}
+
+  Ecrire des m\'ethodes de classes pour Car qui indiquer combien de voituresont sorti de l'usine \\
+
+  Ecrire un constructeur qui permette de donner le nombre de d\'emarrage de chauffe que la voiture a subit
+
+\end{frame}
+
+\end{document}
