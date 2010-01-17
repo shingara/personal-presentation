@@ -10,16 +10,16 @@ class Car
   end
 end
 
-class AutoCar < Car
-  def chauffeur
+class Bus < Car
+  def driver
     true
   end
 end
 
-autocar = AutoCar.new(3)
-puts autocar.door     # 3
-puts autocar.chauffeur # true
+bus = Bus.new(3)
+puts bus.door     # 3
+puts bus.driver  # true
 
 car = Car.new(3)
 puts car.door      # 3
-puts car.chauffeur # NoMethodError
+puts car.driver    # NoMethodError

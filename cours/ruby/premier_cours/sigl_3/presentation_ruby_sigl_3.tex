@@ -386,7 +386,24 @@
   \begin{itemize}
     \item Appel de la m\'ethode parente de la classe mère
     \item Appel de la m\'ethode parente dans les modules
+    \item
+      \begin{itemize}
+        \item h\'eritage de bas en haut
+        \item Appel des m\'ethodes du modules avant la m\'ethode de la classe parente
+      \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Super}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{super.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Super avec les includes}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{super_include.rb}
+  \end{beamerboxesrounded}
 \end{frame}
 
 

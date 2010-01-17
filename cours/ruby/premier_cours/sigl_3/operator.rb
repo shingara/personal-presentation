@@ -1,0 +1,9 @@
+puts nil || 2008     # 2008
+puts false || 2008   # 2008
+puts "ruby" || 2008  # ruby
+puts true && false   # false
+puts 1 < 2           # true
+puts 1 > 2           # false
+puts 1 == 2          # false
+puts 1 <=> 2         # -1
+puts 1 <=> 1         # 0

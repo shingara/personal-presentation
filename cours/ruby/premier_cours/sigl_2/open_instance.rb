@@ -1,10 +1,10 @@
 obj = Object.new
 
 def obj.show
-  'moi'
+  'me'
 end
 
-puts obj.show # moi
+puts obj.show # me
 
 o = Object.new
 o.show # NoMethodError
