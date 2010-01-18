@@ -161,7 +161,7 @@
 \end{frame}
 
 \begin{frame}
-  Ajouter une m\'ethode de classe 'nb_car' qui indique le nombre de voiture actuellement en
+  Ajouter une m\'ethode de classe 'nb\_car' qui indique le nombre de voiture actuellement en
   service.
 \end{frame}
 \begin{frame}
@@ -172,15 +172,26 @@
 
 
 \begin{frame}
+  \frametitle{Mise en place d'H\'eritage}
+  Avoir une classe Ford qui h\'erite de Car et ajoute une m\'ethode 'marque' qui renvoi l'information que c'est une Ford
+  De même avec une Classe Renault
+\end{frame}
 
-  \begin{itemize}
-    \item nb\_stop qui donne le nombre d'arrêt de la voiture
-  \end{itemize}
+\begin{frame}
+  \begin{beamerboxesrounded}{H\'eritage}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_7.rb}
+  \end{beamerboxesrounded}
+\end{frame}
 
-  Ecrire des m\'ethodes de classes pour Car qui indiquer combien de voituresont sorti de l'usine \\
-
-  Ecrire un constructeur qui permette de donner le nombre de d\'emarrage de chauffe que la voiture a subit
-
+\begin{frame}
+  \frametitle{Mise en place de Mixin}
+  Cr\'eer un module qui permette au class Ford et Renault d'avoir une m\'ethode 'add\_driver'
+  qui ajoute des passagers à la voiture et une m\'ethode 'has\_driver?' qui renvoi true si il y a un driver.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Mixin}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_8.rb}
+  \end{beamerboxesrounded}
 \end{frame}
 
 \end{document}

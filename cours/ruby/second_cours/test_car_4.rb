@@ -1,5 +1,6 @@
 require 'car'
 require 'test/unit'
+require 'test_car_3'
 
 class CarTest < Test::Unit::TestCase
 

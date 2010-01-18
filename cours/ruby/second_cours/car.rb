@@ -32,3 +32,27 @@ class Car
   end
 
 end
+
+module Driver
+  def add_driver
+    @driver = true
+  end
+
+  def has_driver?
+    @driver
+  end
+end
+
+class Ford < Car
+  include Driver
+  def marque
+    'Ford'
+  end
+end
+
+class Renault < Car
+  include Driver
+  def marque
+    'Renault'
+  end
+end
