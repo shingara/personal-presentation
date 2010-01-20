@@ -308,6 +308,65 @@
 \end{frame}
 
 \begin{frame}
+  \begin{block}{until}
+    Le mot cl\'e \verb?until? est exactement comme while. La diff\'erence est qu'il est son contraire. L'instruction est donc execut\'e que dans le cas où la condition est fausse.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{until}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{until.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{boucle for}
+  \begin{block}{for}
+    La boucle \verb?for? en ruby a la même syntaxe que dans les autres langage.
+    On utilise le mot cl\'e \verb?for? une variable qui sera initialis\'e à
+    chaque it\'eration. Ensuite on utilise le mot cl\'e \verb?in? et on donne
+    la liste des toutes les valeurs it\'er\'e
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{for}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{for.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{modification de boucle}
+  \begin{block}{next}
+    Permet d'aller directement à l'\'element suivant
+  \end{block}
+  \begin{block}{redo}
+    Execute le même code avec la même instance
+  \end{block}
+  \begin{block}{retry}
+    Recommence l'it\'eration depuis le d\'ebut et relance entièrement la boucle
+  \end{block}
+  \begin{block}{break}
+    Interromps l'execution de la boucle et sort de celle-ci
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{modification de boucle}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{break_next.rb}
+  \end{block}
+\end{frame}
+
+\section{Regexp}
+
+\begin{frame}
+  \begin{block}{Test d'un regexp}
+    On peux faire des tests directement avec les Regexp. La syntaxe de Regexp est la même que celle
+    utilis\'e en Perl
+  \end{block}
+\end{frame}
+
+\begin{frame}
   \frametitle{Ouverture de classe}
   Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiquer dans le test suivant.
 \end{frame}
