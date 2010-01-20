@@ -1,6 +1,7 @@
 class Car
 
   attr_reader :nb_stop
+  attr_reader :first_passenger, :second_passenger
 
   def initialize(nb_running=0)
     @nb_stop = nb_running
@@ -18,6 +19,11 @@ class Car
   def stop
     @nb_stop += 1 if running?
     @run = false
+  end
+
+  def passenger(first, second=nil)
+    @first_passenger = first
+    @second_passenger = second
   end
 
   class << self
@@ -48,11 +54,26 @@ class Ford < Car
   def marque
     'Ford'
   end
+
+  def run
+    super
+    'boom'
+  end
 end
 
 class Renault < Car
   include Driver
   def marque
     'Renault'
+  end
+end
+
+class Integer
+  def cars
+    cars = []
+    self.times do |c|
+      cars << Car.new
+    end
+    cars
   end
 end

@@ -13,3 +13,9 @@ elsif x < 0
 else
   puts 'I am impossible'
 end
+
+unless x > 0
+  put "I can't be see"
+end
+
+puts 'I am here' if x > 0

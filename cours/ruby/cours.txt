@@ -26,9 +26,10 @@ Cours de Ruby
    * Les includes
    * Les extends
  * require
+ * super
 
  * alias
- * super
+ * argument *args
 
  ( 2 heures )
  * Les expressions
