@@ -360,20 +360,41 @@
 \section{Regexp}
 
 \begin{frame}
-  \begin{block}{Test d'un regexp}
+  \frametitle{Regexp}
+  \begin{block}{Composition d'une regexp}
     On peux faire des tests directement avec les Regexp. La syntaxe de Regexp est la même que celle
-    utilis\'e en Perl
+    utilis\'e en Perl. On engloble une Regexp directement avec / et /
+  \end{block}
+  \begin{block}{Test d'une Regexp}
+    On peux faire un test directement avec cette Regexp avec l'op\'erateur \verb?=~?
+
+    Le retour est la position du d\'ebut du matching. nil si ne match pas.
   \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Ouverture de classe}
-  Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiquer dans le test suivant.
+  \begin{block}{Regexp}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{regexp.rb}
+  \end{block}
 \end{frame}
+
 \begin{frame}
-  \begin{beamerboxesrounded}{Super}
-    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_11.rb}
-  \end{beamerboxesrounded}
+  \frametitle{Matching Regexp}
+  \begin{block}{Extraction de partie de sa Regexp}
+    On peux extraire certaine partie de notre Regexp si celle-ci match. On possède les
+    variable \$1, \$2, etc...
+  \end{block}
+
+  \begin{block}{Tester ses Regexp}
+    Je conseille l'utilisation de http://rubular.com pour tester ses Regexp et
+    v\'erifier le matching
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Matching Regexp}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{matching_regexp.rb}
+  \end{block}
 \end{frame}
 
 \end{document}
