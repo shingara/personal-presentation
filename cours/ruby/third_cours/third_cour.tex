@@ -1,0 +1,114 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\title{D\'ebuter en Ruby}
+\author{Cyril Mougel}
+
+\setbeamertemplate{blocks}[rounded]%
+[shadow=false]
+
+
+\lstset{
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+    , showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\section{Array}
+
+\begin{frame}
+  \frametitle{Array}
+  \begin{block}{Liste ordonn\'e}
+    Array est un object qui correspond à une liste ordonn\'e d'\'element
+  \end{block}
+  \begin{block}{Diff\'erente instances possible}
+    La liste ne contient pas obligatoirement la même classe. Il peux y avoir des instances de classes diff\'erente.
+  \end{block}
+  \begin{block}{Accesseur possible par l'index}
+    Rien n'oblige à parcourir la liste dans l'ordre. On peux acc\'eder à la liste par son index ou la parcourir dans les deux sens.
+  \end{block}
+  \begin{block}{index commence à 0}
+    L'index d'une liste commence à 0
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quelque m\'ethode d'Array}
+  \begin{block}{Array#each}
+    La m\'ethode Array#each permet d'it\'erer sur tous les items de la liste. Elle est exactement identique à la m\'ethode \verb?for?. La syntaxe est par contre diff\'erente et privil\'egi\'e dans le monde Ruby.
+  \end{block}
+\end{frame}
+
+\section{ARGV}
+
+
+\begin{frame}
+  \frametitle{Ouverture de classe}
+  Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiquer dans le test suivant.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Super}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_11.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{alias}
+\section{argument args*}
+
+\end{document}
