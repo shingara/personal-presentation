@@ -249,27 +249,100 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Quelque m\'ethode d'Array}
-  \begin{block}{Array#each}
-    La m\'ethode Array#each permet d'it\'erer sur tous les items de la liste.
+  \frametitle{Quelque m\'ethodes d'Array}
+  \begin{block}{Array\#each}
+    La m\'ethode Array\#each permet d'it\'erer sur tous les items de la liste.
     Elle est exactement identique à la m\'ethode \verb?for?. La syntaxe est par contre diff\'erente et privil\'egi\'e dans le monde Ruby.
   \end{block}
+  \begin{block}{Array\#include?}
+    M\'ethode d'instance qui permet de savoir si l'\'el\'ement donn\'e en paramètre est dans la liste. Cela permet d'\'eviter d'it\'erer sur toutes
+    la liste pour savoir si l'object est inclus dedans.
+  \end{block}
+  \begin{block}{Array\#map}
+    M\'ethode d'instance qui permet d'executer un block sur tous les \'el\'ements de la liste.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{method_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exercice 11}
+  Ecrire une classe Parking. Cette classe peux avoir des voitures qui rentre
+  et d'autre qui en sortent. On d\'efini le nombre de voitures maximum que le parking
+  peux avoir à l'instanciation et on ne peux donc pas avoir plus de voitures qui entrent.
+  Si une voiture doit entrer mais que le quota est pass\'e la voiture n'est pas ajout\'ee au
+  parking.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 11}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{../exercices/test_car_11.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Ouverture de classe}
+
+\begin{frame}
+  \frametitle{Ouverture de classe}
+  \begin{block}{Exercice 12}
+    Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiqu\'e dans le test suivant.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Ouverture de classe}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{../exercices/test_car_12.rb}
+  \end{beamerboxesrounded}
 \end{frame}
 
 \section{ARGV}
 
+\begin{frame}
+  \frametitle{ARGV}
+  \begin{block}{c'est une constante}
+    ARGV est une constante car commence par une majuscule.
+  \end{block}
+  \begin{block}{Array}
+    ARGV est un Array rempli automatiquement
+  \end{block}
+  \begin{block}{Tous les arguments de la ligne de commande}
+    R\'ecup\'ere tous les arguments donn\'es par la ligne de commande.
+  \end{block}
+\end{frame}
 
 \begin{frame}
-  \frametitle{Ouverture de classe}
-  Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiquer dans le test suivant.
-\end{frame}
-\begin{frame}
-  \begin{beamerboxesrounded}{Super}
-    \lstinputlisting[numbers=none,basicstyle=\tiny]{test_car_11.rb}
+  \begin{beamerboxesrounded}{ARGV}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{argv.rb}
   \end{beamerboxesrounded}
 \end{frame}
 
 \section{alias}
+
+\begin{frame}
+  \frametitle{alias}
+  \begin{block}{Même nom pour une même m\'ethode}
+    L'utilisation d'alias dans sa classe permet d'avoir des noms de m\'ethode
+    diff\'errente pour la même m\'ethode.
+  \end{block}
+  \begin{block}{Pas de virgule entre argument}
+    Il ne faut pas s\'eparer les noms de m\'ethodes par une virgule.
+  \end{block}
+  \begin{block}{L'appel alias après que la m\'ethode soit d\'efini}
+    Si la m\'ethode n'est pas d\'efini, ca ne peux pas marcher.
+  \end{block}
+  \begin{block}{Cas dans la classe Array}
+    Array\#size est un alias de Array\#length permet d'utiliser la m\'ethode qu'on pr\'ef\'ere.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{alias}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{alias.rb}
+  \end{beamerboxesrounded}
+\end{frame}
 \section{argument args*}
 %% faire alias running running?
 

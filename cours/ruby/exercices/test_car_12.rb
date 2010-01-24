@@ -1,6 +1,6 @@
 require 'car'
 require 'test/unit'
-require 'test_car_10'
+require 'test_car_11'
 
 class IntegerTest < Test::Unit::TestCase
 
