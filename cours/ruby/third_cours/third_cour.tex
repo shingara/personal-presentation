@@ -270,6 +270,41 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Cr\'eer simplement un Array}
+  \begin{block}{utiliser \%w}
+    On peux utiliser \%w pour d\'efinir une Liste. Avec cette m\'ethode
+    chaque \'el\'ement est s\'eparer par un espace.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{generate_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Assignation d'Array}
+  \begin{block}{explosion partiel}
+    Si on assigne plusieurs variables à gauche. On n'utilise pas toutes les donn\'ees
+    du tableaux. On en utilise qu'autant de variable à assigner
+  \end{block}
+  \begin{block}{l'\'etoile explose le tableau}
+    TODO
+    ?????
+    L'utilisation d'une \'etoile devant un tableau r\'ealise une explosion de celui-ci.
+    On peux ainsi retourner toutes
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{assignation_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\begin{frame}
   \frametitle{Exercice 11}
   Ecrire une classe Parking. Cette classe peux avoir des voitures qui rentre
   et d'autre qui en sortent. On d\'efini le nombre de voitures maximum que le parking
@@ -298,6 +333,7 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+
 \section{ARGV}
 
 \begin{frame}
@@ -318,6 +354,7 @@
     \lstinputlisting[numbers=none,basicstyle=\tiny]{argv.rb}
   \end{beamerboxesrounded}
 \end{frame}
+
 
 \section{alias}
 
@@ -343,7 +380,36 @@
     \lstinputlisting[numbers=none,basicstyle=\tiny]{alias.rb}
   \end{beamerboxesrounded}
 \end{frame}
-\section{argument args*}
+
+\section{argument *args}
+
+\begin{frame}
+  \frametitle{cas de *args}
+  \begin{block}{r\'ecupère tous les arguments}
+    Avec cet argument permet d'avoir une m\'ethode qui prend
+    autant d'argument possible. Le tout est assign\'e dans
+    la variable args qui est dans ce cas un Array
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{alias}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{etoile_args.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Rendre des m\'ethodes protected/private}
 %% faire alias running running?
+\section{Hash}
+\section{Range}
+\section{Exception}
+\section{Les block}
+\section{Les Proc/lambda}
+\section{IO/Files}
+\section{ruby-debug}
+\section{metaprogrammation}
+\section{thread}
+\section{rdoc/ri}
+\section{format ternaire ? :}
 
 \end{document}
