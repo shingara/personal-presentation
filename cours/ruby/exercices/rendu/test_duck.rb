@@ -54,8 +54,8 @@ class DuckTest < Test::Unit::TestCase
   # Un canard peux allez ou sortir de la marre.
   def test_go_pond
     duck = Duck.new
-    duck.go_pound
-    assert duck.in_pound?
+    duck.go_pond
+    assert duck.in_pond?
   end
 
   # Un canard peux sortir de la marre.
