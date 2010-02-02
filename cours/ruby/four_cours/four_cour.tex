@@ -1,0 +1,309 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\title{D\'ebuter en Ruby}
+\author{Cyril Mougel}
+
+\setbeamertemplate{blocks}[rounded]%
+[shadow=false]
+
+
+\lstset{
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+    , showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Array}
+
+\begin{frame}
+  \frametitle{Array}
+  \begin{block}{Liste ordonn\'e}
+    Array est un object qui correspond à une liste ordonn\'e d'\'element
+  \end{block}
+  \begin{block}{Diff\'erente instances possible}
+    La liste ne contient pas obligatoirement la même classe. Il peux y avoir des instances de classes diff\'erente.
+  \end{block}
+  \begin{block}{Accesseur possible par l'index}
+    Rien n'oblige à parcourir la liste dans l'ordre. On peux acc\'eder à la liste par son index ou la parcourir dans les deux sens.
+  \end{block}
+  \begin{block}{index commence à 0}
+    L'index d'une liste commence à 0
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quelque m\'ethodes d'Array}
+  \begin{block}{Array\#each}
+    La m\'ethode Array\#each permet d'it\'erer sur tous les items de la liste.
+    Elle est exactement identique à la m\'ethode \verb?for?. La syntaxe est par contre diff\'erente et privil\'egi\'e dans le monde Ruby.
+  \end{block}
+  \begin{block}{Array\#include?}
+    M\'ethode d'instance qui permet de savoir si l'\'el\'ement donn\'e en paramètre est dans la liste. Cela permet d'\'eviter d'it\'erer sur toutes
+    la liste pour savoir si l'object est inclus dedans.
+  \end{block}
+  \begin{block}{Array\#map}
+    M\'ethode d'instance qui permet d'executer un block sur tous les \'el\'ements de la liste.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{method_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cr\'eer simplement un Array}
+  \begin{block}{utiliser \%w}
+    On peux utiliser \%w pour d\'efinir une Liste. Avec cette m\'ethode
+    chaque \'el\'ement est s\'eparer par un espace.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{generate_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Assignation d'Array}
+  \begin{block}{explosion partiel}
+    Si on assigne plusieurs variables à gauche. On n'utilise pas toutes les donn\'ees
+    du tableaux. On en utilise qu'autant de variable à assigner
+  \end{block}
+  \begin{block}{l'\'etoile explose le tableau}
+    TODO
+    ?????
+    L'utilisation d'une \'etoile devant un tableau r\'ealise une explosion de celui-ci.
+    On peux ainsi retourner toutes
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{assignation_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Exercice 11}
+  Ecrire une classe Parking. Cette classe peux avoir des voitures qui rentre
+  et d'autre qui en sortent. On d\'efini le nombre de voitures maximum que le parking
+  peux avoir à l'instanciation et on ne peux donc pas avoir plus de voitures qui entrent.
+  Si une voiture doit entrer mais que le quota est pass\'e la voiture n'est pas ajout\'ee au
+  parking.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 11}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{../exercices/test_car_11.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Ouverture de classe}
+
+\begin{frame}
+  \frametitle{Ouverture de classe}
+  \begin{block}{Exercice 12}
+    Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiqu\'e dans le test suivant.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Ouverture de classe}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{../exercices/test_car_12.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\section{ARGV}
+
+\begin{frame}
+  \frametitle{ARGV}
+  \begin{block}{c'est une constante}
+    ARGV est une constante car commence par une majuscule.
+  \end{block}
+  \begin{block}{Array}
+    ARGV est un Array rempli automatiquement
+  \end{block}
+  \begin{block}{Tous les arguments de la ligne de commande}
+    R\'ecup\'ere tous les arguments donn\'es par la ligne de commande.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{ARGV}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{argv.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\section{alias}
+
+\begin{frame}
+  \frametitle{alias}
+  \begin{block}{Même nom pour une même m\'ethode}
+    L'utilisation d'alias dans sa classe permet d'avoir des noms de m\'ethode
+    diff\'errente pour la même m\'ethode.
+  \end{block}
+  \begin{block}{Pas de virgule entre argument}
+    Il ne faut pas s\'eparer les noms de m\'ethodes par une virgule.
+  \end{block}
+  \begin{block}{L'appel alias après que la m\'ethode soit d\'efini}
+    Si la m\'ethode n'est pas d\'efini, ca ne peux pas marcher.
+  \end{block}
+  \begin{block}{Cas dans la classe Array}
+    Array\#size est un alias de Array\#length permet d'utiliser la m\'ethode qu'on pr\'ef\'ere.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{alias}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{alias.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{argument *args}
+
+\begin{frame}
+  \frametitle{cas de *args}
+  \begin{block}{r\'ecupère tous les arguments}
+    Avec cet argument permet d'avoir une m\'ethode qui prend
+    autant d'argument possible. Le tout est assign\'e dans
+    la variable args qui est dans ce cas un Array
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{*args}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{etoile_args.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Rendre des m\'ethodes protected/private}
+
+\begin{frame}
+  \frametitle{Gestion du protected/private dans les classes}
+  \begin{block}{protected}
+    Avec le mot cl\'e \verb?protected? pour d\'efinir que les m\'ethodes
+    après ce mot cl\'e sont protected.
+
+    Toutes m\'ethodes \verb?protected? est donc accessible par toutes classes
+    qui h\'erite de cette classe. Mais elle n'est pas accessible en m\'ethode
+    public d'instance.
+  \end{block}
+  \begin{block}{private}
+    Avec le mot cl\'e \verb?private? pour d\'efinir que les m\'ethodes
+    après ce mot cl\'e sont priv\'e.
+
+    Toutes m\'ethodes \verb?private? est donc inaccessible par toutes classes
+    qu'elle h\'erite de cette classe ou qu'elle soit tent\'e d'acc\'eder comme
+    une m\'ethode public d'instance.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{protected}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{protected.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{private}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{private.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Hash}
+
+\begin{frame}
+  \frametitle{Les Hash}
+  \begin{block}{Cl\'e / Valeur}
+    Le but d'un Hash est d'avoir un système de cl\'e valeur.
+  \end{block}
+  \begin{block}{Accès rapide}
+    On retrouve l'\'el\'ement à partir de sa cl\'e. C'est donc un accès rapide
+  \end{block}
+  \begin{block}{Utilisation de symbols}
+    On utilise en g\'en\'eral les symboles comme cl\'e car ils sont
+    unique.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Hash}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{hash.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Range}
+\section{Exception}
+\section{Les block}
+\section{Les Proc/lambda}
+\section{IO/Files}
+\section{ruby-debug}
+%% Exercice
+%% faire alias running running?
+\section{metaprogrammation}
+\section{thread}
+\section{rdoc/ri}
+\section{format ternaire ? :}
+
+\end{document}
