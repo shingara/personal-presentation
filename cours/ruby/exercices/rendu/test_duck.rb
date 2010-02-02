@@ -4,8 +4,8 @@ require 'test/unit'
 class DuckTest < Test::Unit::TestCase
 
   # Créer une classe Duck. A l'initialisation de la
-  # classe on donne la couleur de son pelage.
-  # Par d\'efaut les canards sont noir.
+  # classe on donne le sexe du canard.
+  # Par d\'efaut les canards sont des Males (M).
   def test_initialize
     duck = Duck.new
     assert_equal 'M', duck.sexe
