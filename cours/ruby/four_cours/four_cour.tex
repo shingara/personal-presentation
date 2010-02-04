@@ -357,6 +357,29 @@
 \end{frame}
 
 \section{Exception}
+
+\begin{frame}
+  \frametitle{Les exceptions}
+  \begin{block}{Ce sont des objects}
+    Comme tout en Ruby, ce sont des Objects. On peux les instanciers
+    un exception h\'erite obligatoirement de Exception. On peux aussi cr\'eer
+    ses propres exceptions
+  \end{block}
+  \begin{block}{Un exception se lève}
+    Pour lever une exception, on utilise le mot cl\'e \verb?raise?.
+  \end{block}
+  \begin{block}{Arrêt de l'excution}
+    Si une exception est lev\'ee ( raise ) le programme est allez stopp\'e à la
+    ligne ou l'exception est lev\'e. Les lignes suivantes ne sont pas interpr\'et\'es.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exceptions}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exceptions.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{Les block}
 \section{Les Proc/lambda}
 \section{IO/Files}
