@@ -128,11 +128,10 @@
     Si on assigne plusieurs variables à gauche. On n'utilise pas toutes les donn\'ees
     du tableaux. On en utilise qu'autant de variable à assigner
   \end{block}
-  \begin{block}{l'\'etoile explose le tableau}
-    TODO
-    ?????
-    L'utilisation d'une \'etoile devant un tableau r\'ealise une explosion de celui-ci.
-    On peux ainsi retourner toutes
+  \begin{block}{le splat de tableau}
+    Le splat est le symbole \verb?*? Gr\^ace à cette \'etoile on explose
+    un array ou une range. C'est comme si on mettait le contenu de l'array comme
+    valeur s\'epar\'ee.
   \end{block}
 \end{frame}
 
@@ -293,7 +292,52 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Quelques m\'ethodes de Hash}
+  \begin{block}{Hash\#each}
+    Permet d'it\'er\'e sur tous les \'el\'ementsdu hash. L'ordre
+    par contre n'est pas garantie.
+  \end{block}
+  \begin{block}{Hash\#keys}
+    Renvoie un array contenant toutes les cl\'es du Hash
+  \end{block}
+  \begin{block}{Hash\#key?}
+    Permet de savoir si la cl\'ee donn\'ee en paramètre est
+    une cl\'e du Hash
+  \end{block}
+  \begin{block}{Hash\#each\_value}
+    Permet d'it\'er\'e sur toutes les valeurs du Hash
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{M\'ethode de Hash}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{hash_method.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{Range}
+
+\begin{frame}
+  \frametitle{Les ranges}
+  \begin{block}{sorte de liste}
+    G\'en\'ere une sorte d'Array qui est une suite entre le premier et
+    le deuxième \'el\'ement
+  \end{block}
+  \begin{block}{..}
+    Les deux bornes sont incluses
+  \end{block}
+  \begin{block}{...}
+    La borne de droite est excluses
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{M\'ethode de Hash}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{range.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{Exception}
 \section{Les block}
 \section{Les Proc/lambda}
