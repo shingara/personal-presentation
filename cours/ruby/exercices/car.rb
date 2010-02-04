@@ -72,18 +72,20 @@ end
 class Parking < Array
 
   attr_accessor :cars
+  attr_reader :max_size, :name
 
-  def initialize(nb_max_car)
-    @nb_max_car = nb_max_car
+  def initialize(nb_max_car, name='park_1')
+    @max_size = nb_max_car
     @cars = []
+    @name = name
   end
 
   def <<(car)
-    @cars << car if @nb_max_car > @cars.size && !@cars.include?(car)
+    @cars << car if @max_size > @cars.size && !@cars.include?(car)
   end
 
   def out(car)
-    @cars.delete(car)
+    @cars.delete_if{|c| c == car}
   end
 
 end
@@ -95,6 +97,16 @@ class Integer
       cars << Car.new
     end
     cars
+  end
+end
+
+class Hash
+  def generate_parkings
+    parks = []
+    self.each do |k,v|
+      parks << Parking.new(v, k)
+    end
+    parks
   end
 end
 
