@@ -1,4 +1,6 @@
-
+##
+# Car class correct by Cyril Mougel
+#
 class Car
 
   attr_reader :nb_stop

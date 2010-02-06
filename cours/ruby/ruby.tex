@@ -1,0 +1,1076 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\title{Les Bases du Ruby}
+\author{Cyril Mougel}
+
+\lstset{
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+    , showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\Large{}
+
+\begin{frame}
+	\frametitle{L'historique}
+	\begin{itemize}
+		\item Créé en 1993 par Yukihiro Matsumoto dit \og{}Matz\fg{}
+		\item Langage de scripting de haut niveau
+		\item Plus qu'orienté objet: tout est objet
+        \item Applique le principe de moindre surprise (POLS, \emph{principle of
+                least surprise})
+        \item Fonctionne sur les plateformes les plus populaires du marché (Linux, Windows,
+                Mac)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Où trouver des informations}
+  \begin{itemize}
+    \item http://www.ruby-lang.org
+    \item http://www.ruby-doc.org
+    \item http://groups.google.com/group/ruby-talk-google
+    \item http://groups.google.com/group/rubyfr-public
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{G\'en\'eralit\'e sur le langage}
+  \begin{itemize}
+    \item typage dynamique
+    \item pas d'obligation de parenthèse
+    \item pas de main
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Premier programme}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/first_prog.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{irb}
+  \begin{itemize}
+    \item console intéractive
+    \item configurable
+    \item .irbc
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{.irbc}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/irbc.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les Nombres}
+
+\begin{frame}
+  \frametitle{Les nombres}
+  \begin{itemize}
+    \item Integer
+    \item Float
+    \item Op\'erateur ( * + - / \% )
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les nombres}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/number.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les opérateurs}
+
+\begin{frame}
+  \frametitle{Les op\'erateurs}
+  \begin{itemize}
+    \item and or \&\& \textbar\textbar
+    \item \textless= \textless \textgreater \textgreater=
+    \item \textless=\textgreater === ==
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les op\'erateurs}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/operator.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Encore plus d'op\'erateurs}
+  \begin{itemize}
+    \item combinaison des op\'erateurs
+    \item pas de ++ ou de - -
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Combinaison d'op\'erateur}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/combinate_operator.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les Strings}
+
+\begin{frame}
+  \frametitle{Les Strings}
+  \begin{itemize}
+    \item Diff\'erence entre " et '
+    \item Concat\'enation
+    \item Multiplication
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les strings}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/string.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les Symbols}
+
+\begin{frame}
+  \frametitle{Les symbols}
+  \begin{itemize}
+    \item Identifiant unique
+    \item Presque comme des strings
+    \item Utilis\'e  pour les Hash
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les symbols}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/symbols.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\section{L'assignation}
+
+\begin{frame}
+  \frametitle{L'assignation}
+  \begin{itemize}
+    \item De gauche à droite
+    \item multiple
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{L'assignation}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/assign.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Récupération de l'entrée standard}
+
+\begin{frame}
+  \frametitle{STDIN}
+  \begin{itemize}
+    \item STDOUT
+    \item STDIN
+    \item gets
+    \item chomp
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{R\'ecup\'eration de l'entr\'ee standard}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/input.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les variables}
+
+\begin{frame}
+  \frametitle{Les variables}
+  \begin{itemize}
+    \item Variable locale
+    \item Variable globale
+    \item Variable d'instance
+    \item Variable de classe
+    \item Constantes
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les variables}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/variable.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les variables d'instance}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/variable_2.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\section{Les methodes}
+
+\begin{frame}
+  \frametitle{Les m\'ethodes}
+  \begin{itemize}
+    \item Avec ou sans arguments
+    \item Avec des arguments optionnels
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les m\'ethodes}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/method.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les classes}
+
+\begin{frame}
+  \frametitle{Les Classes}
+  \begin{itemize}
+    \item Tout est classes, même nil
+    \item H\'eritage
+    \item Constructeur
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les classes}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/class.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ouverture de classes}
+  \begin{itemize}
+    \item Les classes sont ouvertes
+    \item Ajout de m\'ethode a la vol\'ee sur une instance
+    \item Ajout de m\'ethode a la vol\'ee sur la classe
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Ouverture de classe}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/open_class.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Ouverture d'instance}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/open_instance.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Self}
+  \begin{itemize}
+    \item l'instance de l'objet
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Self}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/self.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{M\'ethode de classe Vs M\'ethode d'instance}
+  \begin{itemize}
+    \item Une seule classe
+    \item Plusieurs instance
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{M\'ethode d'instance \\ M\'ethode de classe}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/instance_classe.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Modules}
+
+\begin{frame}
+  \frametitle{Un module}
+  \begin{itemize}
+    \item Namespace
+    \item Collection de m\'ethodes
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Un module}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/module.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{include de module}
+  \begin{itemize}
+    \item Mixin
+    \item Ajout des m\'ethodes comme des m\'ethodes d'instance
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Include d'un module}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/include_module.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{extend de module}
+  \begin{itemize}
+    \item Ajout des m\'ethodes comme des m\'ethodes de classe
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Include d'un module}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/extend_module.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Super}
+  \begin{itemize}
+    \item Appel de la m\'ethode parente de la classe mère
+    \item Appel de la m\'ethode parente dans les modules
+    \item
+      \begin{itemize}
+        \item h\'eritage de bas en haut
+        \item Appel des m\'ethodes du modules avant la m\'ethode de la classe parente
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Super}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/super.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Super avec les includes}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/super_include.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Convention de nommage}
+  \begin{block}{Classe en CamelCase}
+    Le nom des classes est toujours indiqu\'e en CamelCase.
+  \end{block}
+  \begin{block}{minuscule et underscor\'e}
+    Chaque nom de m\'ethode n'est compos\'e que de nom en minuscule. Les espaces entre les mots est s\'epar\'e par des underscores
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Point d'interrogation}
+    Dans le cas de m\'ethode qui renvoye \verb?true? ou \verb?false? la convention est de mettre un point d'interrogation à la fin du nom de m\'ethode
+  \end{block}
+  \begin{block}{Point d'exclamation}
+    On met un point d'exclamation à la fin d'un nom de m\'ethode dans le cas où la m\'ethode a une action directe sur l'objet alors que la m\'ethode sans point d'exclamation renvoi un nouvelle objet. ex: gsub / gsub!
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{require}
+  \begin{block}{Ajoute les fichiers}
+    Permet de rajouter d'autre fichier ruby à notre fichier actuel. Utilis\'e pour ajouter des librairies.
+  \end{block}
+  \begin{block}{Avec ou sans extension}
+    Pour donner le chemin du fichier à inclure on ajoute le path complet ou non. Dans le cas dun path complet on ajoute l'extension. Par contre on peux ne mettre que le nom du fichier sans extension. Mais ce fichier doit être dans le '\$LOAD\_PATH'
+  \end{block}
+  \begin{block}{\$LOAD\_PATH}
+    Le '\$LOAD\_PATH est une liste de dossier où on peux chercher des fichiers ruby. Si on require un fichier sans extension, on cherchera donc un fichier ruby avec ce nom et l'extension '.rb' dans les dossier sur \$LOAD\_PATH
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{require}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/require.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{if else}
+  \begin{block}{Se ferme par un '\verb?end?'}
+    La fin des instructions s'indique par le mot cl\'e '\verb?end?'.
+  \end{block}
+  \begin{block}{elsif}
+    Cette instruction permet de faire un autre test si le premier \'echoue
+  \end{block}
+  \begin{block}{unless}
+    A l'inverse de '\verb?if?' test que la condition est fausse. Si elle est fausse l'instruction est execut\'ee.
+  \end{block}
+  \begin{block}{Avant ou après}
+      Le '\verb?if?' peux tout à fait être plac\'e après l'instruction qu'il veux executer en cas de succ\'es
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{if else elsif}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/if_else.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{test unitaire}
+  \begin{block}{documentation}
+    http://www.ruby-doc.org/core/classes/Test/Unit.html
+  \end{block}
+  \begin{block}{require 'test/unit'}
+    La librairie de test unitaire est dans la librairie standard. Il suffit de la \verb?require? en d\'ebut de fichier
+  \end{block}
+  \begin{block}{H\'erite de Test::Units::TestCase}
+    Toutes classes de Test unitaire doit h\'erit\'er de Test::Units::TestCase. La classe doit aussi finir par Test
+  \end{block}
+  \begin{block}{nom de m\'ethode commençant par \verb?test\_?}
+    Toutes les m\'ethodes commençant par \verb?test\_? seront lanc\'e pour faire des tests. Les test ne commançant pas par ce mot cl\'e ne seront pas ex\'ecut\'e par les tests. Ils ne seront appel\'es que si explicitement fait.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{\verb?assert\_equal?}
+    L'assertion de base v\'erifie que les deux arguments sont \'egaux l'un par rapport à l'autre
+  \end{block}
+  \begin{block}{\verb?assert?}
+    Permet de v\'erifier que l'argument donn\'e est \verb?true?
+  \end{block}
+  \begin{block}{setup}
+    La m\'ethode particulier '\verb?setup?' est execut\'e avant chaque test. Elle permet de faire des initialisations de donn\'ees
+  \end{block}
+  \begin{block}{teardown}
+    Cette m\'ethode si elle est d\'efini est execut\'e après chaque test. ELle sert à supprimer des donn\'ees cr\'e\'ees durant les tests
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Test Unitaire}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_1.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cr\'eation d'une classe}
+  \begin{block}{Exercice 1}
+  Ecrire une classe qui se nomme Car. Elle doit avoir une m\'ethode d'instance qui
+  se nomme 'running?' et qui renvoi true ou false.
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Exercice 1}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_1.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Exercice 2}
+  La classe Car doit avoir une m\'ethode 'run' qui d\'emarre la voiture.
+  Une fois la voiture d\'emarrer elle doit donc avoir la m\'ethode running? qui
+  renvoi true
+\end{block}
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 2}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_2.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Exercice 3}
+  Ajouter une m\'ethode 'stop' qui arrete la voiture de rouler. La m\'ethode running?
+  doit donc renvoyer cette fois-ci false
+\end{block}
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 3}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_3.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{exercice 4}
+  Indiquer un attribut d'instance accessible en \'ecriture qui indique le nombre de
+  de fois que la voiture s'est arrêt\'ee.
+\end{block}
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 4}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_4.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Exercice 5}
+  Permettre d'ajouter un nombre de d\'emarrage/Arrêt lors de la cr\'eation
+  d'un objet 'Car'
+\end{block}
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 5}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_5.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{exercice 6}
+  Ajouter une m\'ethode de classe 'nb\_car' qui indique le nombre de voiture actuellement en
+  service.
+\end{block}
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 6}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_6.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mise en place d'H\'eritage}
+  \begin{block}{Exercice 7}
+  Avoir une classe Ford qui h\'erite de Car et ajoute une m\'ethode 'marque' qui renvoi l'information que c'est une Ford
+  De même avec une Classe Renault
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 7}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_7.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mise en place de Mixin}
+  \begin{block}{Exercice 8}
+  Cr\'eer un module qui permette au class Ford et Renault d'avoir une m\'ethode 'add\_driver'
+  qui ajoute des passagers à la voiture et une m\'ethode 'has\_driver?' qui renvoi true si il y a un driver.
+\end{block}
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 8}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_8.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Les arguments optionnels}
+  \begin{block}{Exercice 9}
+  Ajouter une m\'ethode à la classe Car qui permette d'ajouter 1 ou 2 passagers. Cette m\'ethode s'appelera 'passenger'. Le premier argument est le nom du premier passager et le deuxième argument est le nom du deuxième passager.
+
+  Les attributs 'first\_passenger' et 'second\_passenger' sont accessible en lecture
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 9}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_9.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Utilisation du super}
+  \begin{block}{Exercice 10}
+  Ajouter une m\'ethode run dans la class Ford qui fait exactement ce que fait la classe Car, mais renvoi 'boom' en plus
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 10}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_10.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les boucles}
+
+\begin{frame}
+  \frametitle{Les boucles}
+  \begin{block}{while}
+    Le mot cl\'e \verb?while? permet de d\'efinir une boucle. on donne une condition après et on fini le block par le mot cl\'e \verb?end?. Ce bloc est execut\'e tant que la condition est vraie.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{while}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/while.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{until}
+    Le mot cl\'e \verb?until? est exactement comme while. La diff\'erence est qu'il est son contraire. L'instruction est donc execut\'e que dans le cas où la condition est fausse.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{until}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/until.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{boucle for}
+  \begin{block}{for}
+    La boucle \verb?for? en ruby a la même syntaxe que dans les autres langage.
+    On utilise le mot cl\'e \verb?for? une variable qui sera initialis\'e à
+    chaque it\'eration. Ensuite on utilise le mot cl\'e \verb?in? et on donne
+    la liste des toutes les valeurs it\'er\'e
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{for}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/for.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{modification de boucle}
+  \begin{block}{next}
+    Permet d'aller directement à l'\'element suivant
+  \end{block}
+  \begin{block}{redo}
+    Execute le même code avec la même instance
+  \end{block}
+  \begin{block}{retry}
+    Recommence l'it\'eration depuis le d\'ebut et relance entièrement la boucle
+  \end{block}
+  \begin{block}{break}
+    Interromps l'execution de la boucle et sort de celle-ci
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{modification de boucle}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/break_next.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Redo retru}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/redo_retry.rb}
+  \end{block}
+\end{frame}
+
+\section{Regexp}
+
+\begin{frame}
+  \frametitle{Regexp}
+  \begin{block}{Composition d'une regexp}
+    On peux faire des tests directement avec les Regexp. La syntaxe de Regexp est la même que celle
+    utilis\'e en Perl. On engloble une Regexp directement avec / et /
+  \end{block}
+  \begin{block}{Test d'une Regexp}
+    On peux faire un test directement avec cette Regexp avec l'op\'erateur \verb?=~?
+
+    Le retour est la position du d\'ebut du matching. nil si ne match pas.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Regexp}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/regexp.rb}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Matching Regexp}
+  \begin{block}{Extraction de partie de sa Regexp}
+    On peux extraire certaine partie de notre Regexp si celle-ci match. On possède les
+    variable \$1, \$2, etc...
+  \end{block}
+
+  \begin{block}{Tester ses Regexp}
+    Je conseille l'utilisation de http://rubular.com pour tester ses Regexp et
+    v\'erifier le matching
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Matching Regexp}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/matching_regexp.rb}
+  \end{block}
+\end{frame}
+
+\section{Array}
+
+\begin{frame}
+  \frametitle{Array}
+  \begin{block}{Liste ordonn\'e}
+    Array est un object qui correspond à une liste ordonn\'e d'\'element
+  \end{block}
+  \begin{block}{Diff\'erente instances possible}
+    La liste ne contient pas obligatoirement la même classe. Il peux y avoir des instances de classes diff\'erente.
+  \end{block}
+  \begin{block}{Accesseur possible par l'index}
+    Rien n'oblige à parcourir la liste dans l'ordre. On peux acc\'eder à la liste par son index ou la parcourir dans les deux sens.
+  \end{block}
+  \begin{block}{index commence à 0}
+    L'index d'une liste commence à 0
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quelque m\'ethodes d'Array}
+  \begin{block}{Array\#each}
+    La m\'ethode Array\#each permet d'it\'erer sur tous les items de la liste.
+    Elle est exactement identique à la m\'ethode \verb?for?. La syntaxe est par contre diff\'erente et privil\'egi\'e dans le monde Ruby.
+  \end{block}
+  \begin{block}{Array\#include?}
+    M\'ethode d'instance qui permet de savoir si l'\'el\'ement donn\'e en paramètre est dans la liste. Cela permet d'\'eviter d'it\'erer sur toutes
+    la liste pour savoir si l'object est inclus dedans.
+  \end{block}
+  \begin{block}{Array\#map}
+    M\'ethode d'instance qui permet d'executer un block sur tous les \'el\'ements de la liste.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/method_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cr\'eer simplement un Array}
+  \begin{block}{utiliser \%w}
+    On peux utiliser \%w pour d\'efinir une Liste. Avec cette m\'ethode
+    chaque \'el\'ement est s\'eparer par un espace.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/generate_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Assignation d'Array}
+  \begin{block}{explosion partiel}
+    Si on assigne plusieurs variables à gauche. On n'utilise pas toutes les donn\'ees
+    du tableaux. On en utilise qu'autant de variable à assigner
+  \end{block}
+  \begin{block}{le splat de tableau}
+    Le splat est le symbole \verb?*? Gr\^ace à cette \'etoile on explose
+    un array ou une range. C'est comme si on mettait le contenu de l'array comme
+    valeur s\'epar\'ee.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Array}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/assignation_array.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Exercice 11}
+  Ecrire une classe Parking. Cette classe peux avoir des voitures qui rentre
+  et d'autre qui en sortent. On d\'efini le nombre de voitures maximum que le parking
+  peux avoir à l'instanciation et on ne peux donc pas avoir plus de voitures qui entrent.
+  Si une voiture doit entrer mais que le quota est pass\'e la voiture n'est pas ajout\'ee au
+  parking.
+\end{frame}
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 11}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_11.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Ouverture de classe}
+
+\begin{frame}
+  \frametitle{Ouverture de classe}
+  \begin{block}{Exercice 12}
+    Permettre la possibilit\'e de cr\'eer des voitures directement à partir d'un entier comment indiqu\'e dans le test suivant.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Ouverture de classe}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_12.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\section{ARGV}
+
+\begin{frame}
+  \frametitle{ARGV}
+  \begin{block}{c'est une constante}
+    ARGV est une constante car commence par une majuscule.
+  \end{block}
+  \begin{block}{Array}
+    ARGV est un Array rempli automatiquement
+  \end{block}
+  \begin{block}{Tous les arguments de la ligne de commande}
+    R\'ecup\'ere tous les arguments donn\'es par la ligne de commande.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{ARGV}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/argv.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
+\section{alias}
+
+\begin{frame}
+  \frametitle{alias}
+  \begin{block}{Même nom pour une même m\'ethode}
+    L'utilisation d'alias dans sa classe permet d'avoir des noms de m\'ethode
+    diff\'errente pour la même m\'ethode.
+  \end{block}
+  \begin{block}{Pas de virgule entre argument}
+    Il ne faut pas s\'eparer les noms de m\'ethodes par une virgule.
+  \end{block}
+  \begin{block}{L'appel alias après que la m\'ethode soit d\'efini}
+    Si la m\'ethode n'est pas d\'efini, ca ne peux pas marcher.
+  \end{block}
+  \begin{block}{Cas dans la classe Array}
+    Array\#size est un alias de Array\#length permet d'utiliser la m\'ethode qu'on pr\'ef\'ere.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{alias}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/alias.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{argument *args}
+
+\begin{frame}
+  \frametitle{cas de *args}
+  \begin{block}{r\'ecupère tous les arguments}
+    Avec cet argument permet d'avoir une m\'ethode qui prend
+    autant d'argument possible. Le tout est assign\'e dans
+    la variable args qui est dans ce cas un Array
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{*args}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/etoile_args.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Rendre des m\'ethodes protected/private}
+
+\begin{frame}
+  \frametitle{Gestion du protected/private dans les classes}
+  \begin{block}{protected}
+    Avec le mot cl\'e \verb?protected? pour d\'efinir que les m\'ethodes
+    après ce mot cl\'e sont protected.
+
+    Toutes m\'ethodes \verb?protected? est donc accessible par toutes classes
+    qui h\'erite de cette classe. Mais elle n'est pas accessible en m\'ethode
+    public d'instance.
+  \end{block}
+  \begin{block}{private}
+    Avec le mot cl\'e \verb?private? pour d\'efinir que les m\'ethodes
+    après ce mot cl\'e sont priv\'e.
+
+    Toutes m\'ethodes \verb?private? est donc inaccessible par toutes classes
+    qu'elle h\'erite de cette classe ou qu'elle soit tent\'e d'acc\'eder comme
+    une m\'ethode public d'instance.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{protected}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/protected.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{private}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/private.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Hash}
+
+\begin{frame}
+  \frametitle{Les Hash}
+  \begin{block}{Cl\'e / Valeur}
+    Le but d'un Hash est d'avoir un système de cl\'e valeur.
+  \end{block}
+  \begin{block}{Accès rapide}
+    On retrouve l'\'el\'ement à partir de sa cl\'e. C'est donc un accès rapide
+  \end{block}
+  \begin{block}{Utilisation de symbols}
+    On utilise en g\'en\'eral les symboles comme cl\'e car ils sont
+    unique.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Hash}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/hash.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quelques m\'ethodes de Hash}
+  \begin{block}{Hash\#each}
+    Permet d'it\'er\'e sur tous les \'el\'ementsdu hash. L'ordre
+    par contre n'est pas garantie.
+  \end{block}
+  \begin{block}{Hash\#keys}
+    Renvoie un array contenant toutes les cl\'es du Hash
+  \end{block}
+  \begin{block}{Hash\#key?}
+    Permet de savoir si la cl\'ee donn\'ee en paramètre est
+    une cl\'e du Hash
+  \end{block}
+  \begin{block}{Hash\#each\_value}
+    Permet d'it\'er\'e sur toutes les valeurs du Hash
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{M\'ethode de Hash}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/hash_method.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Range}
+
+\begin{frame}
+  \frametitle{Les ranges}
+  \begin{block}{sorte de liste}
+    G\'en\'ere une sorte d'Array qui est une suite entre le premier et
+    le deuxième \'el\'ement
+  \end{block}
+  \begin{block}{..}
+    Les deux bornes sont incluses
+  \end{block}
+  \begin{block}{...}
+    La borne de droite est excluses
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{M\'ethode de Hash}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/range.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exercice 13}
+  \begin{block}{Utilisation des Hash}
+    Pour les Parking, on leur ajoute un nom en deuxième argument leur de
+    l'instanciation. Ce nom sera par defaut 'park\_1' et on r\'ecup\'era le nom
+    du parking avec la m\'ethode name
+
+    A partir d'un Hash, on pourra cr\'eer une liste de Parking. La cl\'ee sera le
+    nom du parking et la valeur le nombre maximum de voiture.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 13}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_13.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Exception}
+
+\begin{frame}
+  \frametitle{Les exceptions}
+  \begin{block}{Ce sont des objects}
+    Comme tout en Ruby, ce sont des Objects. On peux les instanciers
+    un exception h\'erite obligatoirement de Exception. On peux aussi cr\'eer
+    ses propres exceptions
+  \end{block}
+  \begin{block}{Un exception se lève}
+    Pour lever une exception, on utilise le mot cl\'e \verb?raise?.
+  \end{block}
+  \begin{block}{Arrêt de l'excution}
+    Si une exception est lev\'ee ( raise ) le programme est allez stopp\'e à la
+    ligne ou l'exception est lev\'e. Les lignes suivantes ne sont pas interpr\'et\'es.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exceptions}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/exceptions.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\section{Les block}
+\section{Les Proc/lambda}
+\section{IO/Files}
+\section{ruby-debug}
+%% Exercice
+%% faire alias running running?
+\section{metaprogrammation}
+\section{thread}
+\section{rdoc/ri}
+\section{format ternaire ? :}
+
+\end{document}
