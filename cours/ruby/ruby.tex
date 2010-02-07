@@ -1092,10 +1092,10 @@
   \end{block}
 \end{frame}
 
-\section{Les block}
+\section{Les blocks}
 
 \begin{frame}
-  \frametitle{Tout est block}
+  \frametitle{Des blocks partout}
   \begin{block}{d\'efinition d'un block}
     Un block est d\'efini par un \verb?do? et \verb?end?.
   \end{block}
@@ -1120,8 +1120,74 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+\begin{frame}
+  \begin{block}{block\_given?}
+    On peux savoir si un block est donn\'e en paramètre de la m\'ethode
+    avec la m\'ethode \verb?block\_given?. On peux ainsi rendre le block
+    optionnel.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{block\_given}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/block_given.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{exercice 15}
+    Cr\'eer une m\'ethode qui permette d'appeler des m\'ethodes quand on roule
+    si on donne un block a la m\'ethode run, la voiture s'arrête à la fin du block.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 15}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_15.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{Les Proc/lambda}
+
+\begin{frame}
+  \frametitle{Les Procs}
+  \begin{block}{block converti en object}
+    Les blocks ne sont pas des Object mais les procs sont des block converti en object
+  \end{block}
+  \begin{block}{Peux être appel\'e plusieurs fois}
+    On peux appeler le proc autant de fois qu'on veux
+  \end{block}
+  \begin{block}{Peux prendre des paramètres}
+    on peux passer des arguments au proc
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Proc/lambda}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/proc_lambda.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{IO/Files}
+
+\begin{frame}
+  \frametitle{Les IO}
+  \begin{block}{Les fichiers}
+    Pour manipuler un fichier on utilise la class \verb?File?. Avec cette classe
+    on peux cr\'eer, \'ecrire ou lire un fichier
+  \end{block}
+  \begin{block}{Manipuler a partir d'un block}
+    Une technique classique pour \'eviter de ne pas oublier de fermer son fichier
+    c'est l'utilisation de block de la m\'ethode \verb?open?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Manipulation de fichier}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/files.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{ruby-debug}
 %% Exercice
 %% faire alias running running?

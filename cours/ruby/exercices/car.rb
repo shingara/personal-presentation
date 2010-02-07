@@ -1,6 +1,4 @@
-##
-# Car class correct by Cyril Mougel
-#
+
 class Car
 
   attr_reader :nb_stop
@@ -17,6 +15,10 @@ class Car
 
   def run
     @run = true
+    if block_given?
+      yield self
+      @run = false
+    end
   end
 
   def stop
