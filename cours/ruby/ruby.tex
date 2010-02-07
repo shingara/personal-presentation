@@ -1060,7 +1060,66 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Utilisation des exceptions}
+  \begin{block}{Begin..rescue}
+    On peux d\'efinir la zone de r\'ecup\'eration d'une exception en
+    la d\'elimitant par les mots cl\'es \verb?begin? et \verb?end?.
+    \\
+    On peux d\'efinir l'exception a catcher ou pas.
+  \end{block}
+  \begin{block}{fin de m\'ethode}
+    On peux mettre un \verb?rescue? à la fin d'une m\'ethode pour ainsi
+    r\'ecup\'erer les exceptions lev\'ees dans la m\'ethode.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Rescue d'exception}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/rescue_exceptions.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Rescue d'exception sp\'ecifique}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/rescue_specific_exception.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{exercice 14}
+    Cr\'eer une m\'ethode ..
+  \end{block}
+\end{frame}
+
 \section{Les block}
+
+\begin{frame}
+  \frametitle{Tout est block}
+  \begin{block}{d\'efinition d'un block}
+    Un block est d\'efini par un \verb?do? et \verb?end?.
+  \end{block}
+  \begin{block}{C'est un argument}
+    Un block peux devenir un argument de m\'ethode
+  \end{block}
+  \begin{block}{yield}
+    Le mot cl\'e appelle l'instruction donn\'ee dans le block
+    elle peux passer des arguments.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les blocks}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/block.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Les blocks avec argument}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/block_argument.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 \section{Les Proc/lambda}
 \section{IO/Files}
 \section{ruby-debug}
