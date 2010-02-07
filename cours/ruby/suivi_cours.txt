@@ -1,0 +1,27 @@
+SIGL 2
+
+premier cours :
+ *
+
+second cours :
+ *
+
+troisième cours :
+ *
+ * Demande d'exercice Duck
+
+quatrième cours :
+ * Correction du rendu Duck
+ * slides 87 ( Array ) => 98 ( exercices 12 )
+
+SIGL 3
+
+premier cours :
+ *
+
+second cours :
+ *
+
+troisième cours :
+ * slides 66(exercice 7) => 98 (fini exercice 12)
+ * Demande d'exercice Duck
