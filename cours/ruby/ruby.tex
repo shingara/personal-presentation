@@ -1234,16 +1234,60 @@
   \end{block}
 \end{frame}
 
+\begin{frame}
+  \begin{block}{gem server}
+    Permet de lancer un serveur local de rubygems. Pratique pour faire proxy locale
+  \end{block}
+  \begin{block}{gem source}
+    Liste les diff\'erentes sources où chercher les gems
+  \end{block}
+\end{frame}
+
 
 \section{ruby-debug}
 
 \begin{frame}
   \frametitle{Le d\'ebugger en ruby}
   \begin{block}{gem install 'ruby-debug'}
+    ruby-debug est un gem.
   \end{block}
   \begin{block}{require 'ruby-debug'}
+    Avant de l'utiliser il faut le require
+  \end{block}
+  \begin{block}{debugger}
+    avec la commande debugger, on d\'efini le point d'arrêt
   \end{block}
 \end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Utiliser ruby-debug}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/ruby-debug.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Commande dans le debugger}
+  \begin{block}{commande: l}
+    La commande \verb?l? permet de connaitre la ligne d'arrêt de l'instruction courante
+  \end{block}
+  \begin{block}{commande: n}
+    La commande \verb?n? permet d'aller à la ligne suivante
+  \end{block}
+  \begin{block}{commande: s}
+    La commande \verb?s? permet d'aller à l'int\'erieur de l'instruction courante
+  \end{block}
+  \begin{block}{commande: irb}
+    La commande \verb?irb? permet d'obtenir un shell irb dans le context de la ligne courante
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{en pratique}
+  \begin{block}{cas pratique}
+    en pratique ca donne ça :
+  \end{block}
+\end{frame}
+
 %% Exercice
 %% faire alias running running?
 \section{metaprogrammation}
