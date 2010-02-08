@@ -1088,8 +1088,16 @@
 
 \begin{frame}
   \begin{block}{exercice 14}
-    Cr\'eer une m\'ethode ..
+    Dans le cas de l'initialisation d'une voiture, si on tente de l'initialiser
+    avec un argument qui n'est pas un entier, alors une exception ArgumentError
+    est lev\'e\\
   \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Exercice 14}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{exercices/test_car_14.rb}
+  \end{beamerboxesrounded}
 \end{frame}
 
 \section{Les blocks}
@@ -1188,7 +1196,54 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+\section{rubygems}
+
+\begin{frame}
+  \frametitle{rubygems}
+  \begin{block}{système de package pour ruby}
+    Rubygems ( http://rubygems.org/ ) permet de g\'erer
+    ses librairies ruby. A partir d'un d\'epôt central
+  \end{block}
+  \begin{block}{gestion de version}
+    Rubygems a une gestion de version et on peux d\'efinir la
+    version que l'on souhaite utiliser dans son code
+  \end{block}
+  \begin{block}{gemcutter}
+    Le d\'epot officiel de tous les gems ruby est http://gemcutter.org
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Utilisation de rubygesm}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/rubygems.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Les commandes de rubygems}
+  \begin{block}{gem install}
+    Pour installer un gems on utiliser la commande \verb?gem install?. On
+    donne ensuite le nom du gems. On peux demander une version
+    particulière avec la commande \verb?-v=2.3.5?
+  \end{block}
+  \begin{block}{gem uninstall}
+    Permet de d\'esinstaller un gem
+  \end{block}
+  \begin{block}{gem help}
+    Permet de connaitre toutes l'aide sur la commande rubygems
+  \end{block}
+\end{frame}
+
+
 \section{ruby-debug}
+
+\begin{frame}
+  \frametitle{Le d\'ebugger en ruby}
+  \begin{block}{gem install 'ruby-debug'}
+  \end{block}
+  \begin{block}{require 'ruby-debug'}
+  \end{block}
+\end{frame}
 %% Exercice
 %% faire alias running running?
 \section{metaprogrammation}
