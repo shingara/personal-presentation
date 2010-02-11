@@ -1,0 +1,83 @@
+Ecrire un programme qui permet de gérer sa TODO list.
+
+Créer un executable qui permet de gérer sa todo list. Il sera composé de
+3 commandes :
+ * add
+ * list
+ * end
+
+Ces 3 commandes prennent aussi un autre argument.
+
+ h1. La commande "add"
+
+Le deuxième argument permet de définir la tâche a faire.
+
+ h1. La commande "list"
+
+La commande "list" permet de consulter toutes les tâches stocker
+
+Le deuxième argument permet de faire un filtre. il existe 3 arguments possible
+ * all
+ * done
+ * todo
+
+ h2. all
+
+Cette commande permet de lister toutes les tâches faites ou pas
+
+ h2. done
+
+Liste toutes les tâches marqué comme done
+
+ h2. todo
+
+Liste toutes les tâches marqué comme todo
+
+ h2. Formatage de sortie
+
+On verra une tâche par ligne. Sous la forme
+[1] [done] XXXX
+
+ * Le numéro de la tâche enregistré
+ * l'état de la tâche TODO ou DONE
+ * Le nom de la tâche
+
+ h1. La commande "end"
+
+Cette commande prend le numéro de la tache a marquer comme done
+
+ h1. Exemple d'utilisation
+
+ruby todo.rb add 'faire le cafe'
+
+ruby todo.rb list all
+> [1] [todo] faire le café
+
+ruby todo.rb end 1
+
+ruby todo.rb list all
+> [1] [done] faire le café
+
+ruby todo.rb list todo
+> nothing
+
+ruby todo.rb list done
+> [1] [done] faire le café
+
+ruby todo.rb add 'faire le code'
+
+ruby todo.rb list all
+> [1] [done] faire le café
+> [2] [todo] faire le code
+
+ruby todo.rb list done
+> [1] [done] faire le café
+
+ruby todo.rb list todo
+> [2] [todo] faire le code
+
+ h1. Rendu
+
+Le rendu doit comprendre le fichier todo.rb et des test unitaires sur les méthodes utilisés
+par ce fichier. Il peux y avoir plusieurs fichier requis par todo.rb. Ils devront être
+fourni avec.
