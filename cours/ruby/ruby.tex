@@ -1196,6 +1196,35 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+\section{YAML}
+
+\begin{frame}
+  \frametitle{S\'erialisation YAML}
+  \begin{block}{S\'erialisation}
+    Le YAML est un format de s\'erialisation d'Object.
+  \end{block}
+  \begin{block}{require 'yaml'}
+    Pour utiliser le YAML en ruby il faut obligatoirement
+    faire un require explicite de 'yaml'
+  \end{block}
+  \begin{block}{YAML.load\_file}
+    Cette m\'ethode permet de prendre un fichier en paramètre
+    et charger le r\'esultat sous forme d'object ruby
+  \end{block}
+  \begin{block}{YAML.dump}
+    La m\'ethode YAML.dump permet de s\'eraliser l'instance
+    sous format YAML et de la mettre dans l'IO donn\'e en
+    deuxième paramètre.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{YAML}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/yaml.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
+
 \section{rubygems}
 
 \begin{frame}
@@ -1214,7 +1243,7 @@
 \end{frame}
 
 \begin{frame}
-  \begin{beamerboxesrounded}{Utilisation de rubygesm}
+  \begin{beamerboxesrounded}{Utilisation de rubygems}
     \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/rubygems.rb}
   \end{beamerboxesrounded}
 \end{frame}
