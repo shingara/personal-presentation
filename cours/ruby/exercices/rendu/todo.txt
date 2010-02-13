@@ -4,7 +4,7 @@ Créer un executable qui permet de gérer sa todo list. Il sera composé de
 3 commandes :
  * add
  * list
- * end
+ * done
 
 Ces 3 commandes prennent aussi un autre argument.
 
@@ -42,7 +42,7 @@ On verra une tâche par ligne. Sous la forme
  * l'état de la tâche TODO ou DONE
  * Le nom de la tâche
 
- h1. La commande "end"
+ h1. La commande "done"
 
 Cette commande prend le numéro de la tache a marquer comme done
 
@@ -53,13 +53,12 @@ ruby todo.rb add 'faire le cafe'
 ruby todo.rb list all
 > [1] [todo] faire le café
 
-ruby todo.rb end 1
+ruby todo.rb done 1
 
 ruby todo.rb list all
 > [1] [done] faire le café
 
 ruby todo.rb list todo
-> nothing
 
 ruby todo.rb list done
 > [1] [done] faire le café
@@ -78,6 +77,6 @@ ruby todo.rb list todo
 
  h1. Rendu
 
-Le rendu doit comprendre le fichier todo.rb et des test unitaires sur les méthodes utilisés
+Le rendu doit comprendre le fichier todo.rb et des tests unitaires sur les méthodes utilisées
 par ce fichier. Il peux y avoir plusieurs fichier requis par todo.rb. Ils devront être
 fourni avec.
