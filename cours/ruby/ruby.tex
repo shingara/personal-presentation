@@ -1224,6 +1224,29 @@
   \end{beamerboxesrounded}
 \end{frame}
 
+\section{ensure}
+
+\begin{frame}
+  \frametitle{Ensure}
+  \begin{block}{executer quoi qu'il arrive}
+    Le block dans ensure permet de d\'efinir des instructions
+    qui seront obligatoirement executer. Sans intervenir sur le code
+  \end{block}
+  \begin{block}{begin..ensure}
+    On doit comme rescue d\'efinir le block où quoiqu'il arrive
+    l'instruction est execut\'e
+  \end{block}
+  \begin{block}{Combine avec rescue}
+    On le met en g\'en\'erale avec des begin rescue.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \begin{beamerboxesrounded}{Ensure}
+    \lstinputlisting[numbers=none,basicstyle=\tiny]{sample/ensure.rb}
+  \end{beamerboxesrounded}
+\end{frame}
+
 
 \section{rubygems}
 
@@ -1316,6 +1339,8 @@
     en pratique ca donne ça :
   \end{block}
 \end{frame}
+
+
 
 %% Exercice
 %% faire alias running running?
