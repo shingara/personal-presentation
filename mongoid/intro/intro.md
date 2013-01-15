@@ -106,21 +106,23 @@ end
 => "Nantes"
 ```
 
-!SLIDE two_cols
+!SLIDE header
 
 # Muliple Type de base #
 
-* Array
+!SLIDE
+
 * BigDecimal
 * Boolean
-* Date
-* DateTime
-
-et
-
-* Float
-* Hash
 * Integer
 * String
 * Symbol
+* Float
+
+!SLIDE
+
+* Date
+* DateTime
 * Time
+* Array
+* Hash
