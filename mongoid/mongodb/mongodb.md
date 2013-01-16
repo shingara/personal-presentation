@@ -23,4 +23,3 @@
 
 * Pas de jointure
 * query operator
-
