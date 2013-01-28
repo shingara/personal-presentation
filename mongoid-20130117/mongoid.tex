@@ -1,0 +1,393 @@
+%presentation
+\documentclass{beamer}
+
+%impressions
+%\documentclass[handout]{beamer}
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\setbeameroption{notes on second screen}
+%\pgfpagelayout{2 on 1}[a4paper, border, shrink=5mm]
+% vue sur http://wwwtaketorg/spip/articlephp3?id_article=30...
+%\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc} % Pour pouvoir taper les accents sans faire de combinaison
+%\usepackage{arev}
+%\usepackage{aeguill}
+%mode code
+\usepackage{listings}
+
+%mode verbatim
+\usepackage{moreverb}
+
+%\usepackage[darktab]{beamerthemesidebar}
+%\leftsidebar
+%\usetheme{Hannover}
+%\usetheme{Warsaw}
+%\usetheme{PaloAlto}
+\usetheme{JuanLesPins}
+%\usetheme{Antibes}
+%\usetheme{Shingara}
+%\usetheme{Berlin}
+%\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{color}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\title{Mongoid}
+\author{Cyril Mougel}
+%\institute{AF83}
+\date{17 Janvier 2013}
+
+%\logo{\includegraphics[width=30mm]{cucumber.png}}
+
+\lstset{
+  breaklines=true
+    , language=ruby
+    , numbers=left
+    , tabsize=2
+    , basicstyle=\small\ttfamily
+    , keywordstyle=\color{blue}
+    , commentstyle=\color{green}
+    , stringstyle=\color{red}
+    , identifierstyle=\ttfamily
+    , columns=fixed
+    , showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Mongoid c'est ?}
+
+\begin{frame}
+  \frametitle{Qu'est ce que Mongoid ?}
+  \begin{itemize}
+    \item Un ODM Object Document Model
+    \item Écrit en Ruby
+    \item API comme ActiveRecord
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exemple simple}
+  \lstinputlisting[numbers=none]{user_base.rb}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Résultat}
+  \lstinputlisting[numbers=none]{user_base.sh}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Définition des champs
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_field.rb}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_field.sh}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Gestion de la Coercion
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_coercion.rb}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_coercion.sh}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Gestion d'un valeur par défaut
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_default.rb}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_default.sh}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Multiple Type de base
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[t]
+
+    \begin{column}{5cm}
+      \begin{itemize}
+        \item BigDecimal
+        \item Boolean
+        \item Integer
+        \item String
+        \item Symbol
+        \item Float
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{5cm}
+      \begin{itemize}
+        \item Date
+        \item DateTime
+        \item Time
+        \item Array
+        \item Hash
+      \end{itemize}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\section{Mais MongoDB ?}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Base NoSQL
+  \end{center}
+
+  \begin{center}
+    \normalsize{}
+    NoSQL == Not Only SQL
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Base de donnée orienté document
+  \end{center}
+
+  \begin{center}
+    \normalsize{}
+    stockage sous format BSON
+  \end{center}
+
+  \begin{center}
+    \normalsize{}
+    BSON == Binary JSON
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Base de donnée orienté document
+  \end{center}
+
+  \begin{itemize}
+    \item Création automatique du schéma
+    \item Pas d'obligation d'homogénéité des documents
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Pas de jointure
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Query Opérator
+  \end{center}
+
+  \begin{itemize}
+    \item \$in
+    \item \$nin
+    \item \$or
+    \item \$gt
+    \item \$lt
+    \item etc..
+  \end{itemize}
+\end{frame}
+
+\section{Mongoid c'est aussi ?}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Include ActiveModel
+  \end{center}
+
+  \begin{itemize}
+    \item Gestion des erreurs
+    \item Gestion des callbacks
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Gestion des associations
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Association entre collection
+  \end{center}
+
+  \begin{itemize}
+    \item has\_many :orders
+    \item belongs\_to :user
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_relation.rb}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_relation.sh}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Association des documents embarqués
+  \end{center}
+
+  \begin{itemize}
+    \item embeds\_many :comments
+    \item embedded\_in :post
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_embbeded.rb}
+\end{frame}
+
+\begin{frame}
+  \lstinputlisting[numbers=none]{user_embbeded.sh}
+\end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \Huge{}
+    Criteria
+  \end{center}
+
+  \begin{columns}[t]
+
+    \begin{column}{5cm}
+      \begin{itemize}
+        \item Model.where
+        \item Model.all\_in
+        \item Model.any\_in
+        \item Model.any\_of
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{5cm}
+      \begin{itemize}
+        \item Model.asc
+        \item Model.desc
+        \item Model.limit
+        \item Model.only
+      \end{itemize}
+    \end{column}
+
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Les criterias sont chainable
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Les criterias sont évalués de manière lazy
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Finder
+  \end{center}
+
+  \begin{itemize}
+    \item Model.all
+    \item Model.first
+    \item Model.last
+    \item Model.exists?
+    \item Model.find
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Moped
+  \end{center}
+
+  \begin{center}
+    \begin{itemize}
+      \item MongoDB driver développé par la communauté Mongoid
+      \item Gestion plus threadsafe par session
+    \end{itemize}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Huge{}
+    Plus d'information ?
+  \end{center}
+
+  \begin{center}
+    RTFM
+  \end{center}
+
+  \begin{itemize}
+    \item http://mongoid.org
+  \end{itemize}
+\end{frame}
+
+\end{document}
