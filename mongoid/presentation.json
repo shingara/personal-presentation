@@ -1,9 +1,0 @@
-{
-  "title": "Mongoid",
-  "theme": "memories",
-  "duration": 30,
-  "sections": {
-    "intro": "Découverte de Mongoid",
-    "mongodb": "Mais MongoDB ?"
-  }
-}
