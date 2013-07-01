@@ -62,8 +62,7 @@
 \logo{\includegraphics[height=10mm]{errbit-logo.png}}
 
 % Define you show the ruby code
-\lstset{
-  breaklines=true
+\lstset{breaklines=true
     , language=ruby
     , numbers=left
     , tabsize=2
@@ -82,25 +81,23 @@
     \titlepage
 \end{frame}
 
-\section{Something Went Wrong ?}
-
 \begin{frame}
   \center{}
   \Huge{}
-  Vous coder sans Bug ?
+  Vous codez sans Bug?
 \end{frame}
 
 \begin{frame}
   \center{}
   \Huge{}
-  Vous faites des tests Unitaire ?
+  Vous faites des tests Unitaires?
 \end{frame}
 
 \begin{frame}
   \center{}
   \Huge{}
-  Vous tester tous les cas, \\
-  même illogique ?
+  Vous testez tous les cas, \\
+  même illogique?
 \end{frame}
 
 \begin{frame}
@@ -108,16 +105,19 @@
 \end{frame}
 
 \begin{frame}
+  \center{}
   \Huge{}
-  Vous faites quoi ?
+  Vous faites quoi?
 \end{frame}
 
 \begin{frame}[fragile]
+  \center{}
   \begin{verbatim}
-    tail -f log/development.log
+    grep 500 -A 1 -B 10 log/development.log
   \end{verbatim}
 \end{frame}
 
+%see http://tex.stackexchange.com/questions/80019/beamer-how-to-align-images-in-separate-columns
 \begin{frame}
   \begin{overlayarea}{10cm}{1cm}
     \centering
@@ -135,6 +135,99 @@
 
 \end{frame}
 
+\begin{frame}
+  \center{}
+  \Huge
+  Exception\_notification?
+  \tiny
+  \url{https://github.com/rails/exception_notification}
+\end{frame}
+
+\begin{frame}
+  \begin{overlayarea}{10cm}{0.5cm}
+    \centering
+    \Huge
+    Inbox (2000)
+    \par
+  \end{overlayarea}
+  \begin{overlayarea}{10cm}{6cm}
+    \centering
+    \vfill
+    \includegraphics[width=\linewidth]{inbox_full.jpg}
+  \end{overlayarea}
+  \source{\url{http://www.flickr.com/photos/10ch/3204310433/}}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  Il y a une application pour ça
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  Errbit
+  \par
+  \tiny
+  \url{http://github.com/errbit/errbit}
+\end{frame}
+
+\begin{frame}
+  \begin{overlayarea}{10cm}{0.5cm}
+    \centering
+    \huge
+    Gestion centralisée des erreurs
+    \par
+  \end{overlayarea}
+  \begin{overlayarea}{10cm}{7cm}
+    \centering
+    \vfill
+    \includegraphics[width=10cm]{visualisation_des_erreurs.png}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \begin{overlayarea}{10cm}{0.5cm}
+    \centering
+    \huge
+    Information concernant une erreur
+    \par
+  \end{overlayarea}
+  \begin{overlayarea}{10cm}{6cm}
+    \centering
+    \vfill
+    \includegraphics[width=\linewidth]{visualisation_d_une_erreur.png}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \begin{overlayarea}{10cm}{0.5cm}
+    \centering
+    \huge
+    Association à un Bug Tracker
+    \par
+  \end{overlayarea}
+  \begin{overlayarea}{10cm}{3cm}
+    \centering
+    \vfill
+    \includegraphics[width=\linewidth]{issue_tracker.png}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \begin{overlayarea}{10cm}{0.5cm}
+    \centering
+    \huge
+    Plusieurs systèmes de notifications
+    \par
+  \end{overlayarea}
+  \begin{overlayarea}{10cm}{3cm}
+    \centering
+    \vfill
+    \includegraphics[width=\linewidth]{service_de_notification.png}
+  \end{overlayarea}
+\end{frame}
+
+
 \end{document}
-
-
