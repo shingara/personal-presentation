@@ -55,9 +55,16 @@
 
 \title{Errbit}
 \subtitle{pour dire c'est fix, \\ quand on vous remonte le bug}
-\author{Cyril Mougel}
-%\institute{AF83}
-\date{4 Juillet 2013}
+\author{
+  Cyril Mougel \\
+  \vspace{0.5cm}
+  \footnotesize
+  \textit{email:} cyril.mougel@gmail.com \\
+  \textit{twitter:} @shingara \\
+  \textit{github:} http://github.com/shingara
+}
+%\institute{XXX}
+\date{2 Juillet 2013}
 
 \logo{\includegraphics[height=10mm]{errbit-logo.png}}
 
@@ -229,5 +236,86 @@
   \end{overlayarea}
 \end{frame}
 
+\begin{frame}[fragile]
+  \center{}
+  \Huge
+  Installer sur heroku?
+  \tiny
+  \begin{verbatim}
+    export APP_NAME='errbit-test-master'
+    export EMAIL_FROM='errbit-test-master@example.org'
+
+    # Create Application
+    heroku create $APP_NAME --stack cedar
+    heroku addons:add mongolab:sandbox
+    heroku addons:add sendgrid:starter
+
+    # Config Application
+    heroku config:add HEROKU=true --app $APP_NAME
+    heroku config:add SECRET_TOKEN="$(bundle exec rake secret)"  --app $APP_NAME
+    heroku config:add ERRBIT_HOST="$APP_NAME.herokuapp.com"  --app $APP_NAME
+    heroku config:add ERRBIT_EMAIL_FROM=$EMAIL_FROM  --app $APP_NAME
+
+    # Start Application
+    git push heroku
+    heroku run db:seed
+
+    open http://errbit-test-master.herokuapp.com
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+  \centering
+  \Huge
+  Configurer l'application
+  \small
+
+  \begin{verbatim}
+  gem install airbrake
+  \end{verbatim}
+
+  \begin{verbatim}
+  Airbrake.configure do |config|
+    config.api_key = '6609bb33d1124b94f3225badc39cbcc8'
+    config.host    = 'errbit-test-master.herokuapp.com'
+    config.port    = 80
+    config.secure  = config.port == 443
+  end
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  Voilà!
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  N'hésitez pas à contribuer
+  \par
+  \url{http://github.com/errbit/errbit}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  Le futur?
+  \normalsize
+  \begin{itemize}
+    \item Migration vers Mongoid 3
+    \item Migration vers Rails 4
+    \item Ajout de notifiers
+    \item Possibilité de plusieurs notifiers simultanés
+    \item Compatiblité avec plusieurs gems de reporting
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge
+  Questions?
+\end{frame}
 
 \end{document}
