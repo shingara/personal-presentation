@@ -35,6 +35,8 @@
 \usepackage{pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{verbatim}
 \usepackage{color}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 \AtBeginSection[]
 {
@@ -43,13 +45,21 @@
   \end{frame}
 }
 
+\usepackage[absolute,overlay]{textpos}
+\newcommand{\source}[1]{\begin{textblock*}{10cm}(0cm,8.6cm)
+    \begin{beamercolorbox}[ht=0.5cm,right]{framesource}
+      \tiny
+      \usebeamerfont{framesource}\usebeamercolor[fg]{framesource} Source: {#1}
+    \end{beamercolorbox}
+\end{textblock*}}
 
-\title{Errbit, pour dire c'est fix quand on vous remonte le bug}
+\title{Errbit}
+\subtitle{pour dire c'est fix, \\ quand on vous remonte le bug}
 \author{Cyril Mougel}
 %\institute{AF83}
 \date{4 Juillet 2013}
 
-\logo{\includegraphics[width=30mm]{errbit-logo.png}}
+\logo{\includegraphics[height=10mm]{errbit-logo.png}}
 
 % Define you show the ruby code
 \lstset{
@@ -72,25 +82,59 @@
     \titlepage
 \end{frame}
 
-\section{Something Went Wrong}
+\section{Something Went Wrong ?}
 
 \begin{frame}
+  \center{}
   \Huge{}
   Vous coder sans Bug ?
 \end{frame}
 
 \begin{frame}
+  \center{}
   \Huge{}
   Vous faites des tests Unitaire ?
 \end{frame}
 
 \begin{frame}
+  \center{}
   \Huge{}
-  Vous tester tous les cas, même illogique ?
+  Vous tester tous les cas, \\
+  même illogique ?
 \end{frame}
 
 \begin{frame}
-  \includegraphics{something_went_wrong.png}
+  \includegraphics[width=\columnwidth]{something_went_wrong.png}
+\end{frame}
+
+\begin{frame}
+  \Huge{}
+  Vous faites quoi ?
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{verbatim}
+    tail -f log/development.log
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \begin{overlayarea}{10cm}{1cm}
+    \centering
+    \Huge
+    Fastidieux
+    \par
+  \end{overlayarea}
+
+  \begin{overlayarea}{10cm}{160px}
+    \centering
+    \vfill
+    \includegraphics[height=150px]{boring_pinkie_vector_by_yellowfireyoshi-d3e3bhx.png}
+  \end{overlayarea}
+  \source{\url{http://yellowfireyoshi.deviantart.com/art/Boring-Pinkie-Vector-205068021}}
+
 \end{frame}
 
 \end{document}
+
+
